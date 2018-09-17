@@ -2,6 +2,8 @@
 
 ## Treehouse
 
+https://teamtreehouse.com
+
 | Course                                       | Course Length |           |
 | :------------------------------------------- | :-----------: | :-------: |
 | CSS Basics                                   |      7h       | ![][tick] |
@@ -9,7 +11,7 @@
 | CSS Selectors                                |      2h       | ![][tick] |
 | Getting Started with WordPress               |      26m      | ![][tick] |
 | Gulp Basics                                  |      2h       | ![][tick] |
-| How to Build a WordPress Blog Without Coding |      88m      | ![][tick] |
+| How to Build a WordPress Blog without Coding |      88m      | ![][tick] |
 | How to Make a Website                        |      8h       | ![][tick] |
 | How to Make a Website with WordPress         |     112m      | ![][tick] |
 | Local WordPress Development                  |      26m      | ![][tick] |
@@ -22,6 +24,8 @@
 | WordPress User Roles                         |      39m      | ![][tick] |
 
 ## Lynda.com
+
+https://www.lynda.com
 
 ### Courses
 
@@ -61,6 +65,8 @@
 
 ## Wes Bos
 
+https://wesbos.com/courses
+
 ### Courses
 
 | Course                  |            |
@@ -73,6 +79,8 @@
 | What The Flexbox?!      | ![][tick]  |
 
 ## WP Elevation
+
+https://www.wpelevation.com
 
 | Course                                                    | Course Length |            |
 | :-------------------------------------------------------- | :-----------: | :--------: |
@@ -99,7 +107,7 @@ https://ithemes.com
 
 ## Up and Running
 
-https://upandrunningwp.com/
+https://upandrunningwp.com
 
 | Course                                                    |           |
 | :-------------------------------------------------------- | :-------: |
@@ -115,7 +123,7 @@ https://thegymnasium.com
 
 ## Free Code Camp
 
-https://www.freecodecamp.org/
+https://www.freecodecamp.org
 
 | Course                                     | Course Length |           |
 | :----------------------------------------- | :-----------: | :-------: |
@@ -125,7 +133,7 @@ https://www.freecodecamp.org/
 
 ## Udemy
 
-https://www.udemy.com/
+https://www.udemy.com
 
 | Course                                                          | Course Length |            |
 | :-------------------------------------------------------------- | :-----------: | :--------: |
@@ -142,7 +150,7 @@ https://www.udemy.com/
 
 ## Udacity
 
-https://www.udacity.com/
+https://www.udacity.com
 
 | Course              |            |
 | :------------------ | :--------: |
@@ -151,7 +159,7 @@ https://www.udacity.com/
 
 ## Watch and Code
 
-https://watchandcode.com/
+https://watchandcode.com
 
 | Course               |           |
 | :------------------- | :-------: |
