@@ -1,10 +1,7 @@
-<img src="https://raw.githubusercontent.com/paulca55/markdown-docs/master/images/cassify-header-logo.png" alt="Cassify logo" width="300">
-
 # Troubleshooting and Known Issues
 
 <!-- TOC depthFrom:2 depthTo:2 orderedList:false updateOnSave:true withLinks:true -->
 
-- [DesktopServer](#desktopserver)
 - [WP Rocket](#wp-rocket)
 - [Justified Image Grid](#justified-image-grid)
 - [SuperCacher says website is not being cached](#supercacher-says-website-is-not-being-cached)
@@ -12,6 +9,7 @@
 - [Error establishing a database connection](#error-establishing-a-database-connection)
 - [Can’t connect a WordPress plugin to Google](#cant-connect-a-wordpress-plugin-to-google)
 - [WordPress editor styles not displaying fonts properly](#wordpress-editor-styles-not-displaying-fonts-properly)
+- [Node Version Manager (NVM)](#node-version-manager-nvm)
 
 <!-- /TOC -->
 
