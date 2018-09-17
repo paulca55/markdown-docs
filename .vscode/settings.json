@@ -1,0 +1,4 @@
+{
+  "editor.quickSuggestions": false,
+  "pandoc.htmlOptString": "-s -f markdown_github -t html5 --css=css/style.css"
+}
