@@ -1,4 +1,4 @@
-<img src="images/cassify-header-logo.png" alt="Cassify logo" width="300">
+<img src="https://raw.githubusercontent.com/paulca55/markdown-docs/master/images/cassify-header-logo.png" alt="Cassify logo" width="300">
 
 # Web Development Tools
 
