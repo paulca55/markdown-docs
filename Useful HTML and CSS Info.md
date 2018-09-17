@@ -1,16 +1,16 @@
-<img src="images/cassify-header-logo.png" alt="Cassify logo" width="300">
+<img src="https://raw.githubusercontent.com/paulca55/images/cassify-header-logo.png" alt="Cassify logo" width="300">
 
 # Useful HTML and CSS Info
 
 <!-- TOC depthFrom:2 depthTo:2 orderedList:false updateOnSave:true withLinks:true -->
 
-* [Links and Images](#links-and-images)
-* [Hello, CSS](#hello-css)
-* [CSS Box Model](#css-box-model)
-* [CSS Selectors](#css-selectors)
-* [Semantic HTML](#semantic-html)
-* [HTML Forms](#html-forms)
-* [Web Typography](#web-typography)
+- [Links and Images](#links-and-images)
+- [Hello, CSS](#hello-css)
+- [CSS Box Model](#css-box-model)
+- [CSS Selectors](#css-selectors)
+- [Semantic HTML](#semantic-html)
+- [HTML Forms](#html-forms)
+- [Web Typography](#web-typography)
 
 <!-- /TOC -->
 
@@ -32,27 +32,27 @@ The width and height attributes can be useful, but it’s usually better to set 
 
 The CSS hierarchy for every web page looks like this:
 
-* The browser’s default stylesheet
-* User-defined stylesheets
-* External stylesheets _(that’s us)_
-* Page-specific styles _(that’s also us)_
-* Inline styles _(that could be us, but it never should be)_
+- The browser’s default stylesheet
+- User-defined stylesheets
+- External stylesheets _(that’s us)_
+- Page-specific styles _(that’s also us)_
+- Inline styles _(that could be us, but it never should be)_
 
 CSS can be defined in 3 ways.
 
-* External stylesheet
-* Internal stylesheet (sometimes referred to as _embedded styles_ or _page-specific styles_)
-* Inline styles
+- External stylesheet
+- Internal stylesheet (sometimes referred to as _embedded styles_ or _page-specific styles_)
+- Inline styles
 
 ## CSS Box Model
 
 ### Block Elements and Inline Elements
 
-* Block boxes always appear below the previous block element. This is the “natural” or “static” flow of an HTML document when it gets rendered by a web browser.
-* The width of block boxes is set automatically based on the width of its parent container.
-* The default height of block boxes is based on the content it contains. For example, when you narrow the browser window which only contains a `<h1>`, the `<h1>` gets split over two lines, and its height adjusts accordingly.
-* Inline boxes _don’t affect_ vertical spacing. They’re not for determining layout — they’re for styling stuff inside of a block.
-* The width of inline boxes is based on the content it contains, not the width of the parent element.
+- Block boxes always appear below the previous block element. This is the “natural” or “static” flow of an HTML document when it gets rendered by a web browser.
+- The width of block boxes is set automatically based on the width of its parent container.
+- The default height of block boxes is based on the content it contains. For example, when you narrow the browser window which only contains a `<h1>`, the `<h1>` gets split over two lines, and its height adjusts accordingly.
+- Inline boxes _don’t affect_ vertical spacing. They’re not for determining layout — they’re for styling stuff inside of a block.
+- The width of inline boxes is based on the content it contains, not the width of the parent element.
 
 Note: The `vertical-align` CSS property specifies the vertical alignment of an **inline** or **table-cell** box.
 
@@ -60,10 +60,10 @@ Note: The `vertical-align` CSS property specifies the vertical alignment of an *
 
 Margins and padding can accomplish the same thing in a lot of situations, making it difficult to determine which one is the “right” choice. The most common reasons why you would pick one over the other are:
 
-* The padding of a box has a background, while margins are always transparent.
-* Padding is included in the click area of an element, while margins aren’t.
-* Margins collapse vertically, while padding doesn’t.
-* If none of these help you decide whether to use padding over margin, then don’t fret about it - just pick one. In CSS, there’s often more than one way to solve your problem.
+- The padding of a box has a background, while margins are always transparent.
+- Padding is included in the click area of an element, while margins aren’t.
+- Margins collapse vertically, while padding doesn’t.
+- If none of these help you decide whether to use padding over margin, then don’t fret about it - just pick one. In CSS, there’s often more than one way to solve your problem.
 
 ### Margins on Inline Elements
 
@@ -175,9 +175,9 @@ This creates a new section, but since there’s no heading associated with it, t
 
 The `<address>` element is like `<time>` in that it doesn’t deal with the overall structure of a document, but rather embellishes the parent `<article>` or `<body>` element with some metadata. It defines contact information for the author of the article or web page in question.
 
-* `<address>` should _not_ be used for arbitrary physical addresses. To represent an arbitrary address, one that is not related to the contact information, use a `<p>` element rather than the `<address>` element.
-* This element should not contain more information than the contact information, like a publication date (which belongs in a `<time>` element).
-* Typically an `<address>` element can be placed inside the `<footer>` element of the current section, if any.
+- `<address>` should _not_ be used for arbitrary physical addresses. To represent an arbitrary address, one that is not related to the contact information, use a `<p>` element rather than the `<address>` element.
+- This element should not contain more information than the contact information, like a publication date (which belongs in a `<time>` element).
+- Typically an `<address>` element can be placed inside the `<footer>` element of the current section, if any.
 
 ```html
 <footer>
@@ -207,10 +207,10 @@ Changing the type property of the `<input>` element to radio transforms it into 
 
 This means that we not only need a label for each `<input>` element, but also a way to group radio buttons and label the entire group. This is what the `<fieldset>` and `<legend>` elements are for. Every radio button group you create should:
 
-* Be wrapped in a `<fieldset>`, which is labeled with a `<legend>`.
-* Associate a `<label>` element with each radio button.
-* Use the same `name` attribute for each radio button in the group.
-* Use different `value` attributes for each radio button.
+- Be wrapped in a `<fieldset>`, which is labeled with a `<legend>`.
+- Associate a `<label>` element with each radio button.
+- Use the same `name` attribute for each radio button in the group.
+- Use different `value` attributes for each radio button.
 
 ### Text Areas
 
