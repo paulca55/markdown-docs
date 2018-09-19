@@ -376,6 +376,7 @@ above to setup VS Code to use PHPCS and WPCS.
 - Express
 - Git History (git log)
 - Git Lens
+- Git Project Manager
 - HTML Snippets
 - HTML CSS Support
 - IntelliSense for CSS class names

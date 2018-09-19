@@ -4,7 +4,6 @@
 
 - [Image sizes in WordPress](#image-sizes-in-wordpress)
 - [Imagify Plugin](#imagify-plugin)
-- [Image Hotlinking](#image-hotlinking)
 - [FontAwesome 5](#fontawesome-5)
 
 <!-- /TOC -->
