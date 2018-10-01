@@ -1,5 +1,40 @@
 # Web Development Tools
 
+<!-- TOC depthFrom:2 depthTo:3 orderedList:false updateOnSave:true withLinks:true -->
+
+- [Command-Line Tools](#command-line-tools)
+  - [Important Info](#important-info)
+  - [iTerm](#iterm)
+  - [Hyper](#hyper)
+  - [ZSH](#zsh)
+  - [Oh-My-ZSH](#oh-my-zsh)
+  - [z](#z)
+- [Homebrew](#homebrew)
+  - [Installing Homebrew](#installing-homebrew)
+  - [Recommended Formulas](#recommended-formulas)
+  - [Recommended Casks](#recommended-casks)
+- [Node.js and npm](#nodejs-and-npm)
+  - [Installing/managing Node.js via nvm](#installingmanaging-nodejs-via-nvm)
+  - [Node Package Manager (npm)](#node-package-manager-npm)
+  - [Global Packages](#global-packages)
+- [Sass](#sass)
+  - [Installing Sass](#installing-sass)
+- [Composer](#composer)
+- [PHP_CodeSniffer and WordPress Coding Standards (with VS Code)](#php_codesniffer-and-wordpress-coding-standards-with-vs-code)
+  - [Global Install (system-wide)](#global-install-system-wide)
+  - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)
+- [VS Code](#vs-code)
+  - [Packages](#packages)
+  - [Themes](#themes)
+  - [Icons](#icons)
+- [SSH](#ssh)
+  - [Generating a new SSH key](#generating-a-new-ssh-key)
+  - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)
+  - [SSH config file](#ssh-config-file)
+  - [Some ssh-add tricks](#some-ssh-add-tricks)
+
+<!-- /TOC -->
+
 ## Command-Line Tools
 
 ### Important Info
@@ -337,7 +372,7 @@ Using the terminal, make sure that you're in your project's directory and then
 issue the following command:
 
 ```
-./vendor/bin/phpcs --config-set installed_paths ~/Dropbox/Apps/Front-end-dev/Front-end-dev/Coding_Standards/wpcs
+./vendor/bin/phpcs --config-set installed_paths ~/Dropbox/Misc/Front-end-dev/Coding_Standards/wpcs
 ```
 
 This will tell your project's copy of PHPCS where the WordPress Coding Standards
@@ -371,7 +406,7 @@ above to setup VS Code to use PHPCS and WPCS.
 - ECMAScript Quotes Transformer
 - EditorConfig for VS Code
 - ESLint _- the npm package `eslint` is required to be installed in the
-  workspace (i.e. `npm install eslint --save-dev`) for this plugin to work. See
+  workspace or globally. The global `eslint` is needed for commands such as `eslint --init` to create an `.eslintrc.json` config file. See
   the extension instructions._
 - Express
 - Git History (git log)
