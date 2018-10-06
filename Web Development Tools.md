@@ -233,6 +233,7 @@ system PATH.
 Install the following npm packages globally:
 
 - gulp-cli _- 1.2+ supports Gulp 3 and 4 out of the box._
+- jasmine
 - live-server
 - modernizr _(run the following command to create the modernizr files based on
   the config file you specify_ - `modernizr -c modernizr-config.json`)
@@ -405,9 +406,7 @@ above to setup VS Code to use PHPCS and WPCS.
 - Debugger for Chrome
 - ECMAScript Quotes Transformer
 - EditorConfig for VS Code
-- ESLint _- the npm package `eslint` is required to be installed in the
-  workspace or globally. The global `eslint` is needed for commands such as `eslint --init` to create an `.eslintrc.json` config file. See
-  the extension instructions._
+- ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is needed for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
 - Express
 - Git History (git log)
 - Git Lens
@@ -434,7 +433,7 @@ above to setup VS Code to use PHPCS and WPCS.
 - SCSS Intellisense
 - Settings Sync
 - Sort JSON Objects
-- stylelint _- the npm package `stylelint-config-recommended` is required to be installed in the workspace (i.e. `npm install stylelint-config-recommended --save-dev`) for this plugin to work. See the GitHub page for instructions._
+- stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets. If you want to order CSS properties you need to install the `styleline-order` npm package in the workspace but note this requires the `stylelint` npm package to be installed in the workspace too._
 - SVG
 - SVG Viewer
 - TODO Highlight
