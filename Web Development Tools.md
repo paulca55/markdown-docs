@@ -31,7 +31,7 @@
   - [Generating a new SSH key](#generating-a-new-ssh-key)
   - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)
   - [SSH config file](#ssh-config-file)
-  - [Some ssh-add tricks](#some-ssh-add-tricks)
+  - [Some `ssh-add` tricks](#some-ssh-add-tricks)
 
 <!-- /TOC -->
 
@@ -150,9 +150,9 @@ a new terminal tab.
 
 ###### Custom Plugins
 
-- zsh-autosuggestions _(can be installed via Homebrew. Remember to add the paths to these to in the `.zshrc` file.)_
+- zsh-autosuggestions - _(can be installed via Homebrew. Remember to add the paths to this to in the `.zshrc` file.)_
 - zsh-nvm
-- zsh-syntax-highlighting _(can be installed via Homebrew. Remember to add the path to these in the `.zshrc` file.)_
+- zsh-syntax-highlighting - _(can be installed via Homebrew. Remember to add the path to this in the `.zshrc` file.)_
 
 _Note: The path to Homebrew installed custom plugins can be found at `/usr/local/share/<package-name>/<package-name>.zsh`._
 
@@ -396,6 +396,8 @@ above to setup VS Code to use PHPCS and WPCS.
 ### Packages
 
 - ACF-Snippet
+- Apache Conf
+- Apache Conf Snippets
 - Advanced New File
 - Auto Close Tag
 - Auto Rename Tag
@@ -403,14 +405,16 @@ above to setup VS Code to use PHPCS and WPCS.
 - Bracket Pair Colorizer
 - Code Spell Checker
 - colorize
+- Complete JSDoc Tags
 - Debugger for Chrome
 - ECMAScript Quotes Transformer
 - EditorConfig for VS Code
-- ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is needed for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
+- ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is useful for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
 - Express
 - Git History (git log)
 - Git Lens
 - Git Project Manager
+- Highlight Matching Tag
 - HTML Snippets
 - HTML CSS Support
 - IntelliSense for CSS class names
@@ -470,7 +474,7 @@ _Note: You can add `-C "your comment here"` to add a comment to your generated k
 
    This will create a private key called `id_rsa` and a public key called `id_rsa.pub`.
 
-   \_Note: If you want to give the key a different name add the `-f` option (e.g. `ssh-keygen -t rsa -b 4096 -f github_rsa`). Note this will create the the keys `hithub_rsa` and `github_rsa.pub` in the current working directory of the terminal.
+   \_Note: If you want to give the key a different name add the `-f` option (e.g. `ssh-keygen -t rsa -b 4096 -f github_rsa`). Note this will create the the keys `github_rsa` and `github_rsa.pub` in the current working directory of the terminal.
 
 1. At the prompt, type a secure passphrase.
 
@@ -481,7 +485,7 @@ _Note: You can add `-C "your comment here"` to add a comment to your generated k
 
 ### Adding your SSH key to the ssh-agent
 
-Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys (i.e. `ls -al ~/.ssh`) and generated a new SSH key. When adding your SSH key to the agent, use the default macOS `ssh-add` command, and not an application installed by macports, homebrew, or some other external source.
+Before adding a new SSH key to the ssh-agent to manage your keys, you should have checked for existing SSH keys (i.e. `ls -al ~/.ssh`) or generated a new SSH key. When adding your SSH key to the agent, use the default macOS `ssh-add` command, and not an application installed by macports, homebrew, or some other external source.
 
 1. If you're using macOS Sierra 10.12.2 or later, you will need to modify your `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
@@ -531,11 +535,11 @@ Host github.com
 
 _Note: It's also possible to connect to [multiple GitHub accounts on a single machine][multiple-git]._
 
-### Some ssh-add tricks
+### Some `ssh-add` tricks
 
 #### Listing
 
-You can list the currently loaded keys with `-l` and `-L`. The former displays the keys fingerprints while the latter displays the entire public key. Both list the path of file the key came from, which it the only way I recognize them.
+You can list the currently loaded keys with `-l` and `-L`. The former displays the keys fingerprints while the latter displays the entire public key.
 
 #### Deleting
 
