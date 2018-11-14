@@ -1,39 +1,6 @@
 # Web Development Tools
 
-<!-- TOC depthFrom:2 depthTo:3 orderedList:false updateOnSave:true withLinks:true -->
-
-- [Command-Line Tools](#command-line-tools)
-  - [Important Info](#important-info)
-  - [iTerm](#iterm)
-  - [Hyper](#hyper)
-  - [ZSH](#zsh)
-  - [Oh-My-ZSH](#oh-my-zsh)
-  - [z](#z)
-- [Homebrew](#homebrew)
-  - [Installing Homebrew](#installing-homebrew)
-  - [Recommended Formulas](#recommended-formulas)
-  - [Recommended Casks](#recommended-casks)
-- [Node.js and npm](#nodejs-and-npm)
-  - [Installing/managing Node.js via nvm](#installingmanaging-nodejs-via-nvm)
-  - [Node Package Manager (npm)](#node-package-manager-npm)
-  - [Global Packages](#global-packages)
-- [Sass](#sass)
-  - [Installing Sass](#installing-sass)
-- [Composer](#composer)
-- [PHP_CodeSniffer and WordPress Coding Standards (with VS Code)](#php_codesniffer-and-wordpress-coding-standards-with-vs-code)
-  - [Global Install (system-wide)](#global-install-system-wide)
-  - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)
-- [VS Code](#vs-code)
-  - [Packages](#packages)
-  - [Themes](#themes)
-  - [Icons](#icons)
-- [SSH](#ssh)
-  - [Generating a new SSH key](#generating-a-new-ssh-key)
-  - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)
-  - [SSH config file](#ssh-config-file)
-  - [Some `ssh-add` tricks](#some-ssh-add-tricks)
-
-<!-- /TOC -->
+<!-- TOC depthFrom:2 depthTo:3 orderedList:false updateOnSave:true withLinks:true -->autoauto- [Command-Line Tools](#command-line-tools)auto  - [Important Info](#important-info)auto  - [iTerm](#iterm)auto  - [Hyper](#hyper)auto  - [ZSH](#zsh)auto  - [Oh-My-ZSH](#oh-my-zsh)auto  - [z](#z)auto- [Homebrew](#homebrew)auto  - [Installing Homebrew](#installing-homebrew)auto  - [Recommended Formulas](#recommended-formulas)auto  - [Recommended Casks](#recommended-casks)auto- [Node.js and npm](#nodejs-and-npm)auto  - [Installing/managing Node.js via nvm](#installingmanaging-nodejs-via-nvm)auto  - [Node Package Manager (npm)](#node-package-manager-npm)auto  - [Global Packages](#global-packages)auto- [Sass](#sass)auto  - [Installing Sass](#installing-sass)auto- [Composer](#composer)auto- [PHP_CodeSniffer and WordPress Coding Standards (with VS Code)](#php_codesniffer-and-wordpress-coding-standards-with-vs-code)auto  - [Global Install (system-wide)](#global-install-system-wide)auto  - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)auto- [VS Code](#vs-code)auto  - [Packages](#packages)auto  - [Themes](#themes)auto  - [Icons](#icons)auto- [SSH](#ssh)auto  - [Generating a new SSH key](#generating-a-new-ssh-key)auto  - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)auto  - [SSH config file](#ssh-config-file)auto  - [Some `ssh-add` tricks](#some-ssh-add-tricks)autoauto<!-- /TOC -->
 
 ## Command-Line Tools
 
@@ -41,7 +8,7 @@
 
 #### System Path
 
-The file which lists all of the paths in your system $PATH can be found at
+The file which lists all of the paths in your system \$PATH can be found at
 `/private/etc/paths`.
 
 _Note: Not all paths will be in this file as they can also be added via the
@@ -514,26 +481,34 @@ _Note: The config file can be edited or should be created at `~/.ssh/config`._
 
 #### Config file example
 
+Example of using an alias. You can then connect with 'ssh cassify' in the terminal using the specified options.
+
 ```shell
+# Web Hosting
+Host somealias
+  User someuser
+  HostName example.co.uk
+  Port 18765
+
+# GitHub (Personal)
+Host github.com
+   HostName github.com
+   User git
+
+# GitHub (Work Account)
+Host github.com-workaccount
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/work_rsa
+
+# Fallback for all other SSH connections. The below settings wil also be applied to the above if something has been omitted (e.g. IdentityFile, UseKeyChain, etc.)
 Host *
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa
-
-# Example of using an alias. You can then connect with 'ssh cassify' in the terminal using the specified options.
-Host cassify
-  User cassify7
-  HostName cassify.co.uk
-  Port 18765
-  IdentityFile ~/.ssh/cassify_rsa
-
-# GitHub
-Host github.com
-  User git
-  IdentityFile ~/.ssh/github_rsa
 ```
 
-_Note: It's also possible to connect to [multiple GitHub accounts on a single machine][multiple-git]._
+_Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git]._
 
 ### Some `ssh-add` tricks
 

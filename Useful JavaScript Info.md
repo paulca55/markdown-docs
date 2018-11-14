@@ -38,7 +38,7 @@ document.body.childNodes;
 
 ## Looping over `Array`, `Object`, `NodeList` and `HTMLCollection`
 
-_Note: See the **Selecting Multiple DOM Elements/Nodes** section about how a `NodeList` and an `HTMLCollection` can be a **live** collection or a **static** collection._
+_Note: See the **Selecting Multiple DOM Elements/Nodes** section about how a `NodeList` and a `HTMLCollection` can be a **live** collection or a **static** collection._
 
 ### Arrays
 
