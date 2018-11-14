@@ -141,16 +141,24 @@ https://www.udemy.com
 | Advanced CSS and Sass: Take Your CSS to the Next Level!         |      28h      | ![][cross] |
 | Become a WordPress Developer: Unlocking Power With Code         |      26h      | ![][cross] |
 | Build Responsive Real World Websites with HTML5 and CSS3        |      12h      | ![][cross] |
+| Complete SEO Training With Top SEO Expert Peter Kent!           |      8h       | ![][cross] |
+| Complete WordPress Development Themes and Plugins Course        |      16h      | ![][cross] |
+| Facebook Ads & Facebook Marketing MASTERY 2018                  |    14h 30m    | ![][cross] |
 | Git a Web Developer Job: Mastering the Modern Workflow          |    15h 30m    | ![][tick]  |
 | Git Complete: The definitive, step-by-step guide to Git         |      6h       | ![][cross] |
 | JavaScript Algorithms                                           |    6h 30m     | ![][cross] |
+| JavaScript: Understanding the Weird Parts                       |    11h 30m    | ![][cross] |
+| The Complete Digital Marketing Course - 12 Courses in 1         |    36h 30m    | ![][cross] |
 | The Complete JavaScript Course - Beginner to Professional       |    34h 30m    | ![][cross] |
 | The Complete JavaScript Course 2018: Build a Real-World Project |    17h 30m    | ![][tick]  |
 | The Complete Sketch 5 Course - Design Apps & Websites 2018      |    14h 30m    | ![][cross] |
+| The Complete SEO Guide to Ranking Local Business Websites       |    6h 30m     | ![][cross] |
 | The Complete Web Developer Course 2.0                           |    30h 30m    | ![][cross] |
+| The Complete Web Developer in 2018: Zero to Mastery             |      30h      | ![][cross] |
 | The Complete WordPress Website Business Course                  |    21h 30m    | ![][cross] |
 | The Modern JavaScript Bootcamp (2018)                           |    29h 30m    | ![][cross] |
 | The Web Developer Bootcamp                                      |      43h      | ![][cross] |
+| Web Design for Web Developers: Build Beautiful Websites         |      3h       | ![][tick]  |
 
 ## Udacity
 
