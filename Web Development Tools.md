@@ -130,7 +130,7 @@ uses the command line. The idea behind z is that it builds a list of your most
 frequent and recent — “Frecent” — folders and allows you to jump to them quickly
 in one command, rather than having to tab through a nested folder structure.
 
-1.  z is included in the Oh-My-ZSH bundled plugins. Add it to the list of plugins in the `.zshrc` file.
+1. `z` is included in the Oh-My-ZSH bundled plugins. Add it to the list of plugins in the `.zshrc` file.
 
 ```
 plugins=(git extract osx npm z)
@@ -170,7 +170,7 @@ _Note: You may need to add the path to your system PATH in the `.zshrc` file (e.
 
 ### Installing/managing Node.js via nvm
 
-The best way to install and manage Node.js is using **Node Version Manager (nvm)**. When using ZSH and Oh-My-ZSH! it's easiest to install `nvm` via the Oh-My-ZSH! custom plugin `zsh-nvm`. If not you can install it via Homebrew.
+The best way to install and manage Node.js is using **Node Version Manager (nvm)**. When using ZSH and Oh-My-ZSH! it's easiest to install `nvm` via the Oh-My-ZSH! custom plugin `zsh-nvm`. If not you can install it via Homebrew but be careful as it is not officially supported.
 
 _Note: The path for `nvm` installations of Node is `/Users/paul/.nvm/versions/node`._
 
@@ -200,15 +200,17 @@ system PATH.
 Install the following npm packages globally:
 
 - gulp-cli _- 1.2+ supports Gulp 3 and 4 out of the box._
+- eslint
 - jasmine
 - live-server
 - modernizr _(run the following command to create the modernizr files based on
   the config file you specify_ - `modernizr -c modernizr-config.json`)
+- parcel
 - webpack
 
 **Example:** `npm install <package> -g`
 
-_Note: Global packages are stored a- `/Users/paul/.nvm/versions/node/<node_version>/lib/node_modules`._
+_Note: Assuming you are using nvm to manage Node versions, the global `npm` packages are stored at- `/Users/paul/.nvm/versions/node/<node_version>/lib/node_modules`._
 
 _Note: When you install global npm packages they will be installed for the current version of Node you have active. To reinstall packages you're using from another version of Node you can run the following command - `nvm reinstall-packages <version>`_
 
@@ -363,9 +365,9 @@ above to setup VS Code to use PHPCS and WPCS.
 ### Packages
 
 - ACF-Snippet
+- Advanced New File
 - Apache Conf
 - Apache Conf Snippets
-- Advanced New File
 - Auto Close Tag
 - Auto Rename Tag
 - Better Comments
@@ -379,20 +381,20 @@ above to setup VS Code to use PHPCS and WPCS.
 - ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is useful for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
 - Express
 - Git History (git log)
-- Git Lens
 - Git Project Manager
+- Git Lens
 - Highlight Matching Tag
-- HTML Snippets
 - HTML CSS Support
-- IntelliSense for CSS class names
+- HTML Snippets
 - Import Cost
+- IntelliSense for CSS class names
 - javascript console utils
 - join-lines
 - Markdown Toc
 - markdownlint
-- Multiple clipboards for VSCode
 - npm
 - npm Intellisense
+- Output Colorizer
 - Path Intellisense
 - PHP Intellisense - Crane
 - phpcs
@@ -400,10 +402,10 @@ above to setup VS Code to use PHPCS and WPCS.
 - PostCSS Sorting
 - Prettier _- if you want Prettier to use `ESLint` and `Stylelint` rules, make sure you set this up in the VS Code settings. See the extension instructions._
 - Project Manager
-- Sort Lines
 - SCSS Intellisense
 - Settings Sync
 - Sort JSON Objects
+- Sort Lines
 - stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets. If you want to order CSS properties you need to install the `styleline-order` npm package in the workspace but note this requires the `stylelint` npm package to be installed in the workspace too._
 - SVG
 - SVG Viewer
