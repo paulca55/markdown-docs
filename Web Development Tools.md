@@ -1,6 +1,37 @@
 # Web Development Tools
 
-<!-- TOC depthFrom:2 depthTo:3 orderedList:false updateOnSave:true withLinks:true -->autoauto- [Command-Line Tools](#command-line-tools)auto  - [Important Info](#important-info)auto  - [iTerm](#iterm)auto  - [Hyper](#hyper)auto  - [ZSH](#zsh)auto  - [Oh-My-ZSH](#oh-my-zsh)auto  - [z](#z)auto- [Homebrew](#homebrew)auto  - [Installing Homebrew](#installing-homebrew)auto  - [Recommended Formulas](#recommended-formulas)auto  - [Recommended Casks](#recommended-casks)auto- [Node.js and npm](#nodejs-and-npm)auto  - [Installing/managing Node.js via nvm](#installingmanaging-nodejs-via-nvm)auto  - [Node Package Manager (npm)](#node-package-manager-npm)auto  - [Global Packages](#global-packages)auto- [Sass](#sass)auto  - [Installing Sass](#installing-sass)auto- [Composer](#composer)auto- [PHP_CodeSniffer and WordPress Coding Standards (with VS Code)](#php_codesniffer-and-wordpress-coding-standards-with-vs-code)auto  - [Global Install (system-wide)](#global-install-system-wide)auto  - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)auto- [VS Code](#vs-code)auto  - [Packages](#packages)auto  - [Themes](#themes)auto  - [Icons](#icons)auto- [SSH](#ssh)auto  - [Generating a new SSH key](#generating-a-new-ssh-key)auto  - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)auto  - [SSH config file](#ssh-config-file)auto  - [Some `ssh-add` tricks](#some-ssh-add-tricks)autoauto<!-- /TOC -->
+- [Web Development Tools](#web-development-tools)
+  - [Command-Line Tools](#command-line-tools)
+    - [Important Info](#important-info)
+    - [iTerm](#iterm)
+    - [Hyper](#hyper)
+    - [ZSH](#zsh)
+    - [Oh-My-ZSH](#oh-my-zsh)
+    - [z](#z)
+  - [Homebrew](#homebrew)
+    - [Installing Homebrew](#installing-homebrew)
+    - [Recommended Formulas](#recommended-formulas)
+    - [Recommended Casks](#recommended-casks)
+  - [Node.js and npm](#nodejs-and-npm)
+    - [Installing/managing Node.js via nvm](#installingmanaging-nodejs-via-nvm)
+    - [Node Package Manager (npm)](#node-package-manager-npm)
+    - [Global Packages](#global-packages)
+  - [Sass](#sass)
+    - [Installing Sass](#installing-sass)
+  - [Composer](#composer)
+  - [PHP_CodeSniffer and WordPress Coding Standards (with VS Code)](#phpcodesniffer-and-wordpress-coding-standards-with-vs-code)
+    - [Global Install (system-wide)](#global-install-system-wide)
+    - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)
+  - [VS Code](#vs-code)
+    - [Packages](#packages)
+    - [Packages (replaced by built-in functionality)](#packages-replaced-by-built-in-functionality)
+    - [Themes](#themes)
+    - [Icons](#icons)
+  - [SSH](#ssh)
+    - [Generating a new SSH key](#generating-a-new-ssh-key)
+    - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)
+    - [SSH config file](#ssh-config-file)
+    - [Some `ssh-add` tricks](#some-ssh-add-tricks)
 
 ## Command-Line Tools
 
@@ -62,9 +93,7 @@ _Note: Hyper plugins are stored a- `/Users/paul/.hyper_plugins/node_modules`._
 
 ### ZSH
 
-ZSH is a popular alternative to the Bash shell. ZSH is installed on macOS by
-default but you may wish to install the most up to date version, you can do this
-using Homebrew.
+ZSH is a popular alternative to the Bash shell. ZSH is installed on macOS by default but you may wish to install the most up to date version, you can do this using Homebrew.
 
 ```
 brew install zsh zsh-completions
@@ -258,11 +287,13 @@ on your system._
 
 #### PHP_CodeSniffer
 
-_Note: You may need to install version 2.9 of PHPCS as version 3 doesn't seem to
-work with the VS Code extension._
+Install PHPCS globally using Composer.
 
-Install PHPCS globally using Homebrew (this is easier than using Composer for
-the global installation).
+```
+composer global require "squizlabs/php_codesniffer=*"
+```
+
+This will install PHPCS in the `vendor` folder of the composer global directory `/Users/paul/.composer`. It will also update `composer.json` to tell it where to locate PHPCS. Once this is done, we need the WordPress Coding Standard ruleset.
 
 #### WordPress Coding Standards
 
@@ -292,27 +323,26 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz, Zen
 
 #### VS Code User Settings
 
-_Note: You may have to install the `phpcs` extension for this to work._
+_Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work._
 
 Finally, we need to let VS Code what we're going to be using to sniff out the
 code in our project and what rules to use. Add the following to the
 `settings.json` file.
 
 ```
-"phpcs.enable":   true,
+"phpcs.enable": true,
 "phpcs.standard": "WordPress",
+"phpcs.ignorePatterns": ["*/vendor/*", "*/vendors/*"],
+"phpcbf.enable": true,
+"phpcbf.onsave": true,
+"phpcbf.standard": "WordPress",
 ```
 
-This will enable PHPCS and will also tell it to use the standard WordPress
-ruleset. If this doesn't start working on your code automatically, then restart
-VS Code.
+This will enable PHPCS and PHPCBF and will also tell it to use the standard WordPress ruleset. If this doesn't start working on your code automatically, then restart VS Code.
 
 ### Local Install (project-by-project basis)
 
 #### PHP_CodeSniffer
-
-_Note: You may need to install version 2.9 of PHPCS as version 3 doesn't seem to
-work with the VS Code extension._
 
 To install PHP_CodeSniffer using Composer, you can issue the following command.
 You need to be in the root of the project or you can use your code editor's
@@ -322,9 +352,7 @@ integrated terminal which should take you there by default.
 composer require "squizlabs/php_codesniffer=*"
 ```
 
-This will create `composer.json`, tell it where to locate PHP_CodeSniffer and
-install it in a `vendor` directory. Once this is done, we need the WordPress
-Coding Standard ruleset.
+This will install PHPCS in the `vendor` folder of the working directory/workspace. It will also create a `composer.json` file and update it to tell it where to locate PHPCS. Once this is done, we need the WordPress Coding Standard ruleset.
 
 #### WordPress Coding Standards
 
@@ -358,7 +386,7 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz, Zen
 #### VS Code User Settings
 
 See the **VS Code User Settings** section in the global install instructions
-above to setup VS Code to use PHPCS and WPCS.
+above to setup VS Code to use PHPCS, PHPCBF and WPCS.
 
 ## VS Code
 
@@ -372,47 +400,71 @@ above to setup VS Code to use PHPCS and WPCS.
 - Auto Rename Tag
 - Better Comments
 - Bracket Pair Colorizer
+- Code Runner
 - Code Spell Checker
 - colorize
 - Complete JSDoc Tags
+- CSS Peek
 - Debugger for Chrome
 - ECMAScript Quotes Transformer
 - EditorConfig for VS Code
 - ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is useful for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
 - Express
-- Git History (git log)
+- File Utils
 - Git Project Manager
-- Git Lens
+- Gitconfig Syntax
+- GitHub Pull Requests
+- gitignore
+- GitLens
 - Highlight Matching Tag
 - HTML CSS Support
-- HTML Snippets
+- HTMLHint
 - Import Cost
-- IntelliSense for CSS class names
+- indent-rainbow
+- JavaScript (ES6) code snippets
 - javascript console utils
-- join-lines
-- Markdown Toc
+- lit-html
+- Macros
+- Markdown All in One
 - markdownlint
+- Node.js Modules Intellisense
 - npm
 - npm Intellisense
 - Output Colorizer
 - Path Intellisense
-- PHP Intellisense - Crane
+- PHP Debug
+- PHP Intelephense
 - phpcs
+- phpcbf _-the actual tool `phpcbf` is installed as part of `phpcs`._
 - Polacode
 - PostCSS Sorting
 - Prettier _- if you want Prettier to use `ESLint` and `Stylelint` rules, make sure you set this up in the VS Code settings. See the extension instructions._
 - Project Manager
-- SCSS Intellisense
+- pug
+- Pug to HTML
+- puglint
+- Quokka.js
+- React Native Tools
+- Reactjs code snippets
+- SCSS IntelliSense
+- Search WordPress Docs
 - Settings Sync
+- snippet-creator
 - Sort JSON Objects
 - Sort Lines
 - stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets. If you want to order CSS properties you need to install the `styleline-order` npm package in the workspace but note this requires the `stylelint` npm package to be installed in the workspace too._
 - SVG
 - SVG Viewer
 - TODO Highlight
+- Trailing Spaces
 - Version Lens
 - vscode-pandoc
-- WordPress Snippet
+- WordPress Toolbox
+
+### Packages (replaced by built-in functionality)
+
+- IntelliSense for CSS class names
+- HTML Snippets
 
 ### Themes
 

@@ -1,14 +1,22 @@
 # Useful JavaScript Info
 
-<!-- TOC depthFrom:2 depthTo:2 orderedList:false updateOnSave:true withLinks:true -->
-
-- [The DOM](#the-dom)
-- [Looping over `Array`, `Object`, `NodeList` and `HTMLCollection`](#looping-over-array-object-nodelist-and-htmlcollection)
-- [Converting a `NodeList` or an `HTMLCollection` to an `Array`](#converting-a-nodelist-or-an-htmlcollection-to-an-array)
-- [Copying an `Array`](#copying-an-array)
-- [Page lifecycle: DOMContentLoaded, load, beforeunload, unload](#page-lifecycle-domcontentloaded-load-beforeunload-unload)
-
-<!-- /TOC -->
+- [Useful JavaScript Info](#useful-javascript-info)
+  - [The DOM](#the-dom)
+    - [Selecting Multiple DOM Elements/Nodes](#selecting-multiple-dom-elementsnodes)
+  - [Looping over `Array`, `Object`, `NodeList` and `HTMLCollection`](#looping-over-array-object-nodelist-and-htmlcollection)
+    - [Arrays](#arrays)
+    - [Objects](#objects)
+    - [NodeLists](#nodelists)
+    - [HTMLCollections](#htmlcollections)
+  - [Converting a `NodeList` or an `HTMLCollection` to an `Array`](#converting-a-nodelist-or-an-htmlcollection-to-an-array)
+    - [Method 1 (for supporting IE8 and below)](#method-1-for-supporting-ie8-and-below)
+    - [Method 2 (for supporting IE9 and above)](#method-2-for-supporting-ie9-and-above)
+    - [Method 3](#method-3)
+  - [Copying an `Array`](#copying-an-array)
+    - [The old school way](#the-old-school-way)
+    - [The fancy new ES6 way](#the-fancy-new-es6-way)
+    - [Browser Compatibility](#browser-compatibility)
+  - [Page lifecycle: DOMContentLoaded, load, beforeunload, unload](#page-lifecycle-domcontentloaded-load-beforeunload-unload)
 
 ## The DOM
 
@@ -23,7 +31,7 @@ document.children;
 ```
 
 1.  Using these methods will select any matching _elements_ only and will return them in an `HTMLCollection`.
-1.  An `HTMLCollection` in the HTML DOM is live; it is automatically updated when the underlying document is changed.
+2.  An `HTMLCollection` in the HTML DOM is live; it is automatically updated when the underlying document is changed.
 
 #### Option 2
 
