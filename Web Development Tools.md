@@ -338,7 +338,7 @@ code in our project and what rules to use. Add the following to the
 "phpcbf.standard": "WordPress",
 ```
 
-This will enable PHPCS and PHPCBF and will also tell it to use the standard WordPress ruleset. If this doesn't start working on your code automatically, then restart VS Code.
+This will enable PHPCS and PHPCBF and will also tell them to use the standard WordPress ruleset. If this doesn't start working on your code automatically, then restart VS Code.
 
 ### Local Install (project-by-project basis)
 
