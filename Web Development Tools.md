@@ -325,17 +325,19 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz, Zen
 
 _Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work._
 
+_Note: The **global** `phpcs` and `phpcbf` will be used._
+
 Finally, we need to let VS Code what we're going to be using to sniff out the
 code in our project and what rules to use. Add the following to the
 `settings.json` file.
 
 ```
 "phpcs.enable": true,
-"phpcs.standard": "WordPress",
 "phpcs.ignorePatterns": ["*/vendor/*", "*/vendors/*"],
+"phpcs.standard": "WordPress",
 "phpcbf.enable": true,
 "phpcbf.onsave": true,
-"phpcbf.standard": "WordPress",
+"phpcbf.standard": "WordPress"
 ```
 
 This will enable PHPCS and PHPCBF and will also tell them to use the standard WordPress ruleset. If this doesn't start working on your code automatically, then restart VS Code.
@@ -385,8 +387,26 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz, Zen
 
 #### VS Code User Settings
 
-See the **VS Code User Settings** section in the global install instructions
-above to setup VS Code to use PHPCS, PHPCBF and WPCS.
+_Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work._
+
+_Note: The **local** `phpcs` and `phpcbf` will be used._
+
+Finally, we need to let VS Code what we're going to be using to sniff out the
+code in our project and what rules to use. Add the following to the
+`settings.json` file.
+
+```
+"phpcs.enable": true,
+"phpcs.executablePath": "./vendor/bin/phpcs",
+"phpcs.ignorePatterns": ["*/vendor/*", "*/vendors/*"],
+"phpcs.standard": "WordPress",
+"phpcbf.enable": true,
+"phpcbf.executablePath": "./vendor/bin/phpcbf",
+"phpcbf.onsave": true,
+"phpcbf.standard": "WordPress",
+```
+
+This will enable PHPCS and PHPCBF and will also tell them to use the standard WordPress ruleset. If this doesn't start working on your code automatically, then restart VS Code.
 
 ## VS Code
 
@@ -434,6 +454,7 @@ above to setup VS Code to use PHPCS, PHPCBF and WPCS.
 - Path Intellisense
 - PHP Debug
 - PHP Intelephense
+- PHP Intellisense
 - phpcs
 - phpcbf _-the actual tool `phpcbf` is installed as part of `phpcs`._
 - Polacode
