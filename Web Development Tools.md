@@ -498,23 +498,126 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 
 ## Debugging
 
+### Debugging Modern JavaScript
+
+_Note: These notes are taken from the [VS Code Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais]._
+
+Debug modern JavaScript with this VS Code and Babel recipe.
+
+#### 1. Init a module (without it asking any questions)
+
+```sh
+npm init -y
+```
+
+#### 2. Babel setup
+
+```sh
+npm i -D babel-cli babel-core babel-preset-env
+```
+
+#### 3. Add `.babelrc`
+
+```sh
+touch .babelrc
+```
+
+#### 4. Edit `.babelrc`
+
+```json
+{
+  "presets": ["env"]
+}
+```
+
+#### 5. The `package.json` file looks like
+
+```json
+{
+  "name": "vscodepro",
+  "description": "VSCode.pro for Power Users",
+  "version": "1.0.0",
+  "author": "AhmadAwais",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "debug": "babel-node debug index.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
+```
+
+#### 6. My `.vscode/launch.json` file
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach",
+      "restart": true,
+      "port": 9229
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "protocol": "inspector",
+      "name": "ES6 Debugger",
+      "program": "${workspaceFolder}/index.js",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/babel-node",
+      "runtimeArgs": ["--presets", "env"]
+    }
+  ]
+}
+```
+
+### Debugging with Chrome & React.js Framework
+
+1. This requires that you have the [Debugger for Chrome][debugger-for-chrome] VS Code extension installed.
+
+2. Create a `launch.json` file.
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Chrome + React",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src"
+    }
+  ]
+}
+```
+
 ### Node.js
 
-### VSCode WordPress Debugging Setup using Xdebug and Local by Flywheel
+See the [Node.js debugging in VS Code with Nodemon][nodejs-vscode-debugging] Github repository for more details.
 
-_Note: These notes are taken from the [VSCode Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais]._
+### VS Code WordPress Debugging Setup using Xdebug and Local by Flywheel
+
+_Note: These notes are taken from the [VS Code Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais]._
 
 #### TL;DR
 
 - Make sure your `Local by Flywheel` WordPress install is a custom install
 - Configure `xdebug.remote_autostart = 1` in the `php.ini` file
 - Restart your site container in `Local by Flywheel` to apply new settings
-- Install VSCode `PHP Debug` extension
+- Install VS Code `PHP Debug` extension
 - Add PHP Debugger Configuration with an extra property for the `Listen for Xdebug` section i.e. `"pathMappings": {"/app/public/wp-content/themes/theme-name": "${workspaceFolder}"}`
 
 #### Detailed Tutorial
 
-Here're are some easy steps to follow to make sure you can debug WordPress in Local by Flywheel with VSCode:
+Here're are some easy steps to follow to make sure you can debug WordPress in Local by Flywheel with VS Code:
 
 ##### Custom WordPress Install
 
@@ -556,11 +659,11 @@ Restart your site container in `Local by Flywheel` to apply new settings.
 
 ##### Visual Studio Code Configuration
 
-Let's start configuration of VSCode:
+Let's start configuration of VS Code:
 
 - First of all, install [PHP Debug][php-debug] extension.
-- Open your Local WordPress site project folder in VSCode. You should open theme folder i.e. `/PATH_WHERE_YOU_INSTALLED_WORDPRESS/app/public/wp-content/themes/theme-name`.
-- Go to the Debug view in VSCode `COMMAND (⌘) + SHIFT (⇧) + D`.
+- Open your Local WordPress site project folder in VS Code. You should open theme folder i.e. `/PATH_WHERE_YOU_INSTALLED_WORDPRESS/app/public/wp-content/themes/theme-name`.
+- Go to the Debug view in VS Code `COMMAND (⌘) + SHIFT (⇧) + D`.
 - Click “Add configuration” from the top toolbar.
 - Select `PHP` and add the configuration.
 - In the `.vscode/launch.json` file that was created inside the `Listen for Xdebug` section add `"pathMappings": {"/app/public/wp-content/themes/theme-name": "${workspaceFolder}"}`.
@@ -600,8 +703,8 @@ In short, your debug `launch.json` file will look like this:
 Now go ahead and debug your WordPress app/plugin/theme.
 
 - Click the play button next to “Listen for Xdebug” in the top debug bar.
-- Create a breakpoint in your PHP code e.g. add this line and a breakpoint`<?php $true_story = 'Ahmad is cool and VScode.pro is awesome!'; ?>` to `header.php` of your theme.
-- Browse your site and VSCode should pop up showing all your debug info.
+- Create a breakpoint in your PHP code e.g. add this line and a breakpoint`<?php $true_story = 'Ahmad is cool and VS code.pro is awesome!'; ?>` to `header.php` of your theme.
+- Browse your site and VS Code should pop up showing all your debug info.
 
 #### Extra Plugin (optional)
 
@@ -758,7 +861,9 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [brew]: https://brew.sh/ 'Homebrew'
 [wpcs&phpcs]: https://github.com/tommcfarlin/phpcs-wpcs-vscode 'WPCS and PHPCS'
 [multiple-git]: https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca 'How to manage multiple GitHub accounts on a single machine with SSH keys'
-[vscode-pro]: https://vscode.pro/ 'VSCode Power User - Learn Visual Studio Code'
+[vscode-pro]: https://vscode.pro/ 'VS Code Power User - Learn Visual Studio Code'
 [ahmad-awais]: https://ahmadawais.com/ 'Ahmad Awais - Developer Advocate for JavaScript & Open Source'
 [php-debug]: https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug 'PHP Debug Adapter for Visual Studio Code'
 [local-addon-xdebug-control]: https://github.com/lucatume/local-addon-xdebug-control 'A Local by Flywheel addon to manage XDebug settings through the UI.'
+[nodejs-vscode-debugging]: https://github.com/Microsoft/vscode-recipes/tree/master/nodemon
+[debugger-for-chrome]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'A VS Code extension to debug your JavaScript code in the Google Chrome browser'
