@@ -496,6 +496,121 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Material Icon Theme
 - vscode-icons
 
+## Debugging
+
+### Node.js
+
+### VSCode WordPress Debugging Setup using Xdebug and Local by Flywheel
+
+_Note: These notes are taken from the [VSCode Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais]._
+
+#### TL;DR
+
+- Make sure your `Local by Flywheel` WordPress install is a custom install
+- Configure `xdebug.remote_autostart = 1` in the `php.ini` file
+- Restart your site container in `Local by Flywheel` to apply new settings
+- Install VSCode `PHP Debug` extension
+- Add PHP Debugger Configuration with an extra property for the `Listen for Xdebug` section i.e. `"pathMappings": {"/app/public/wp-content/themes/theme-name": "${workspaceFolder}"}`
+
+#### Detailed Tutorial
+
+Here're are some easy steps to follow to make sure you can debug WordPress in Local by Flywheel with VSCode:
+
+##### Custom WordPress Install
+
+_Note: Make sure your `Local by Flywheel` WordPress install is using a custom local environment._
+
+- Flywheel Local has Xdebug installed by default if you choose “Custom” instead of “Preferred” when setting up a new local environment.
+- If you are not running a custom local environment you can just export your site, import it back in and this time choose “Custom”. It's possible to change the local environment from within the settings but this sometimes causes problems.
+
+##### Configure Xdebug
+
+Now that we are using a custom local environment we need to configure Xdebug.
+
+- Go to your local WordPress install path E.g. `/PATH_WHERE_YOU_INSTALLED_WORDPRESS/conf/php/7.x.x/php.ini`
+- Search for the `[Xdebug]` section
+- Add the following line in this section
+
+```ini
+xdebug.remote_autostart = 1
+```
+
+_Note: While only the above option is required but some 3rd party extension/plugin for local can sometimes change things so make sure in the `[Xdebug]` section all the following settings are set to `1` (only if your debugger is not working)._
+
+```ini
+xdebug.scream = 1
+xdebug.remote_enable = 1
+xdebug.show_local_vars = 1
+xdebug.remote_autostart = 1
+xdebug.remote_connect_back = 1
+```
+
+Save the `php.ini` file.
+
+##### Restart The Site
+
+Restart your site container in `Local by Flywheel` to apply new settings.
+
+- On the left side menu, right click on your site
+- Select `Restart` option to restart the site.
+
+##### Visual Studio Code Configuration
+
+Let's start configuration of VSCode:
+
+- First of all, install [PHP Debug][php-debug] extension.
+- Open your Local WordPress site project folder in VSCode. You should open theme folder i.e. `/PATH_WHERE_YOU_INSTALLED_WORDPRESS/app/public/wp-content/themes/theme-name`.
+- Go to the Debug view in VSCode `COMMAND (⌘) + SHIFT (⇧) + D`.
+- Click “Add configuration” from the top toolbar.
+- Select `PHP` and add the configuration.
+- In the `.vscode/launch.json` file that was created inside the `Listen for Xdebug` section add `"pathMappings": {"/app/public/wp-content/themes/theme-name": "${workspaceFolder}"}`.
+
+In short, your debug `launch.json` file will look like this:
+
+```json
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for Xdebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9000,
+      "pathMappings": {
+        "/app/public/wp-content/themes/theme-name": "${workspaceFolder}"
+      }
+    },
+    {
+      "name": "Launch currently open script",
+      "type": "php",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${fileDirname}",
+      "port": 9000
+    }
+  ]
+}
+```
+
+##### Debug Your WordPress
+
+Now go ahead and debug your WordPress app/plugin/theme.
+
+- Click the play button next to “Listen for Xdebug” in the top debug bar.
+- Create a breakpoint in your PHP code e.g. add this line and a breakpoint`<?php $true_story = 'Ahmad is cool and VScode.pro is awesome!'; ?>` to `header.php` of your theme.
+- Browse your site and VSCode should pop up showing all your debug info.
+
+#### Extra Plugin (optional)
+
+You can also install a local plugin called [local-addon-xdebug-control][local-addon-xdebug-control] for UI based control of Xdebug settings in your `Local by Flywheel` software.
+
+_Note: Make sure everything is set to yes for a sane debugging experience._
+
+![Add-on](https://on.ahmda.ws/9155be150de8/c)
+
 ## SSH
 
 ### Generating a new SSH key
@@ -643,3 +758,7 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [brew]: https://brew.sh/ 'Homebrew'
 [wpcs&phpcs]: https://github.com/tommcfarlin/phpcs-wpcs-vscode 'WPCS and PHPCS'
 [multiple-git]: https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca 'How to manage multiple GitHub accounts on a single machine with SSH keys'
+[vscode-pro]: https://vscode.pro/ 'VSCode Power User - Learn Visual Studio Code'
+[ahmad-awais]: https://ahmadawais.com/ 'Ahmad Awais - Developer Advocate for JavaScript & Open Source'
+[php-debug]: https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug 'PHP Debug Adapter for Visual Studio Code'
+[local-addon-xdebug-control]: https://github.com/lucatume/local-addon-xdebug-control 'A Local by Flywheel addon to manage XDebug settings through the UI.'
