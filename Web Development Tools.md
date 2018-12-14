@@ -614,11 +614,11 @@ _Note: These notes are taken from the [VS Code Power User][vscode-pro] course by
 
 #### TL;DR
 
-- Make sure your `Local by Flywheel` WordPress install is a custom install
-- Configure `xdebug.remote_autostart = 1` in the `php.ini` file
-- Restart your site container in `Local by Flywheel` to apply new settings
-- Install VS Code `PHP Debug` extension
-- Add PHP Debugger Configuration with an extra property for the `Listen for Xdebug` section i.e. `"pathMappings": {"/app/public/wp-content/themes/theme-name": "${workspaceFolder}"}`
+- Make sure your `Local by Flywheel` WordPress install is a custom install.
+- Configure `xdebug.remote_autostart = 1` in the `php.ini` file.
+- Restart your site container in `Local by Flywheel` to apply new settings.
+- Install VS Code `PHP Debug` extension.
+- Add PHP Debugger Configuration with an extra property for the `Listen for Xdebug` section i.e. `"pathMappings": {"/app/public/wp-content/themes/theme-name": "${workspaceFolder}"}`.
 
 #### Detailed Tutorial
 
@@ -635,9 +635,9 @@ _Note: Make sure your `Local by Flywheel` WordPress install is using a custom lo
 
 Now that we are using a custom local environment we need to configure Xdebug.
 
-- Go to your local WordPress install path E.g. `/PATH_WHERE_YOU_INSTALLED_WORDPRESS/conf/php/7.x.x/php.ini`
-- Search for the `[Xdebug]` section
-- Add the following line in this section
+- Go to your local WordPress install path E.g. `/PATH_WHERE_YOU_INSTALLED_WORDPRESS/conf/php/7.x.x/php.ini`.
+- Search for the `[Xdebug]` section.
+- Add the following line in this section.
 
 ```ini
 xdebug.remote_autostart = 1
@@ -659,7 +659,7 @@ Save the `php.ini` file.
 
 Restart your site container in `Local by Flywheel` to apply new settings.
 
-- On the left side menu, right click on your site
+- On the left side menu, right click on your site.
 - Select `Restart` option to restart the site.
 
 ##### Visual Studio Code Configuration
