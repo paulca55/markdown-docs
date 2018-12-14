@@ -418,8 +418,10 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Apache Conf Snippets
 - Auto Close Tag
 - Auto Rename Tag
+- Better Align
 - Better Comments
 - Bracket Pair Colorizer
+- change-case
 - Code Runner
 - Code Spell Checker
 - colorize
@@ -441,8 +443,10 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - HTMLHint
 - Import Cost
 - indent-rainbow
+- Insert Numbers
 - JavaScript (ES6) code snippets
 - javascript console utils
+- jQuery Code Snippets
 - lit-html
 - Macros
 - Markdown All in One
@@ -479,6 +483,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - TODO Highlight
 - Trailing Spaces
 - Version Lens
+- vscode-faker
 - vscode-pandoc
 - WordPress Toolbox
 
