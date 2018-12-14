@@ -297,8 +297,7 @@ This will install PHPCS in the `vendor` folder of the composer global directory 
 
 #### WordPress Coding Standards
 
-Clone a copy of the standards sniffer from GitHub. This assumes you’re working
-out of `~/Dropbox/Misc/Front-end-dev/Coding_Standards` but you can install WPCS
+Clone a copy of the standards sniffer from GitHub. This assumes you’re working out of `~/Dropbox/Misc/Front-end-dev/Coding_Standards` but you can install WPCS
 anywhere you would like it to be referenced from.
 
 ```
