@@ -33,8 +33,10 @@ https://www.lynda.com
 | :-------------------------------------------------------- | :-----------: | :--------: |
 | Accessibility for Web Design                              |      2h       | ![][cross] |
 | Coercion in JavaScript                                    |    3h 18m     | ![][cross] |
+| CSS: Advanced Layouts with Grid                           |    2h 55m     | ![][tick]  |
 | CSS: Animation                                            |      2h       | ![][cross] |
 | CSS: Gradients                                            |    1h 13m     | ![][tick]  |
+| Figma for UX Design                                       |    1h 51m     | ![][tick]  |
 | Google Analytics Essential Training                       |    3h 45m     | ![][cross] |
 | Google+ for Business                                      |    1h 41m     | ![][cross] |
 | HTTP/2: Developing for Performance                        |    2h 18m     | ![][cross] |
@@ -42,8 +44,10 @@ https://www.lynda.com
 | JavaScript Essential Training                             |    5h 15m     | ![][tick]  |
 | Learning Git and GitHub                                   |    1h 20m     | ![][tick]  |
 | Learning Regular Expressions                              |    5h 36m     | ![][cross] |
-| Learning Slack                                            |    2h 35m     | ![][cross] |
+| Learning Slack                                            |    2h 35m     | ![][tick]  |
 | Learning SVG                                              |    2h 30m     | ![][cross] |
+| Learning Responsive Web Design in the Browser             |    1h 51m     | ![][tick]  |
+| Making Sense of the CSS Box Model                         |      50m      | ![][tick]  |
 | Marketing Foundations: Social Media                       |    1h 56m     | ![][cross] |
 | Marketing on Facebook                                     |    2h 53m     | ![][tick]  |
 | Marketing on Twitter                                      |    2h 12m     | ![][cross] |
@@ -60,9 +64,9 @@ https://www.lynda.com
 | WordPress Developer Tips: DRY Development                 |      35m      | ![][tick]  |
 | WordPress: Building Themes from Scratch Using Underscores |      6h       | ![][tick]  |
 | WordPress: Accessibility                                  |    1h 30m     | ![][cross] |
-| WordPress: Building Responsive Themes                     |    2h 55m     | ![][cross] |
+| WordPress: Building Responsive Themes                     |    2h 55m     | ![][tick]  |
 | WordPress: Building Progressive Themes with WP Rig        |    2h 14m     | ![][cross] |
-| WordPress Plugins: Advanced Custom Fields                 |      99m      | ![][cross] |
+| WordPress Plugins: Advanced Custom Fields                 |      99m      | ![][tick]  |
 
 ## Wes Bos
 
@@ -144,7 +148,7 @@ https://www.udemy.com
 | Accelerated JavaScript Training                                 |    7h 30m     | ![][tick]  |
 | Advanced CSS and Sass: Take Your CSS to the Next Level!         |      28h      | ![][cross] |
 | Become a WordPress Developer: Unlocking Power With Code         |      26h      | ![][cross] |
-| Build Responsive Real World Websites with HTML5 and CSS3        |      12h      | ![][cross] |
+| Build Responsive Real World Websites with HTML5 and CSS3        |      12h      | ![][tick]  |
 | Complete SEO Training With Top SEO Expert Peter Kent!           |      8h       | ![][cross] |
 | Complete WordPress Development Themes and Plugins Course        |      16h      | ![][cross] |
 | Facebook Ads & Facebook Marketing MASTERY 2018                  |    14h 30m    | ![][cross] |

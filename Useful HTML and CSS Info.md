@@ -49,8 +49,8 @@ CSS can be defined in 3 ways.
 - Block boxes always appear below the previous block element. This is the “natural” or “static” flow of an HTML document when it gets rendered by a web browser.
 - The width of block boxes is set automatically based on the width of its parent container.
 - The default height of block boxes is based on the content it contains. For example, when you narrow the browser window which only contains a `<h1>`, the `<h1>` gets split over two lines, and its height adjusts accordingly.
-- Inline boxes _don’t affect_ vertical spacing. They’re not for determining layout — they’re for styling stuff inside of a block.
-- The width of inline boxes is based on the content it contains, not the width of the parent element.
+- Inline boxes _don’t affect_ vertical spacing. They’re not for determining layout — they’re for styling stuff inside of a block. When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element, but you cannot add height to the top or bottom padding or margin of an inline element.
+- The width of inline boxes is based on the content it contains (including any left and right padding), not the width of the parent element.
 
 Note: The `vertical-align` CSS property specifies the vertical alignment of an **inline** or **table-cell** box.
 
@@ -74,12 +74,15 @@ So, before you start banging your head against the wall trying to figure out why
 Sometimes you do want to prevent the margins from collapsing. All you need to do is put another invisible element in between them (_although this isn't very semantic_).
 
 ```html
-<p>Paragraphs are blocks, too. <em>However</em>, &lt;em&gt; and &lt;strong&gt; elements are not. They are <strong>inline</strong> elements.</p>
+<p>
+  Paragraphs are blocks, too. <em>However</em>, &lt;em&gt; and &lt;strong&gt; elements are not. They
+  are <strong>inline</strong> elements.
+</p>
 
-<div style='padding-top: 1px'></div>  <!-- Add this -->
+<div style="padding-top: 1px"></div>
+<!-- Add this -->
 
-<p>Block elements define the flow of the HTML document, while inline elements
-do not.</p>
+<p>Block elements define the flow of the HTML document, while inline elements do not.</p>
 ```
 
 The important part here is that only consecutive elements can collapse into each other. Putting an element with non-zero height (hence the `padding-top` on the `div`) between our paragraphs forces them to display both the top margin and the bottom margin.
@@ -98,9 +101,7 @@ Say we had a `.container` div and a `.content` div inside of it. If we set `padd
 
 ```html
 <div class="container">
-  <div class="content">
-    <p>The content</p>
-  </div>
+  <div class="content"><p>The content</p></div>
 </div>
 ```
 
@@ -122,6 +123,8 @@ Say we had a `.container` div and a `.content` div inside of it. If we set `padd
 The answer is `600px`. This is because this is half (`padding-bottom: 50%;`) of the width of the containing block (`.container`). This is actually a good method to keep an element in proportion when scaling down the screen size (see [CSS Tricks][css-tricks-scaled-content] for more info).
 
 Note: If you are using `box-sizing: border-box;` and had `border: 10px solid #000;` applied to the `.container` div, then the height of `.content` would be `590px`. This is because with the `10px` border on the left and the right, the actual width of the content area of `.container` is `1180px`. So 50% of this is `590px`. However if you used `box-sizing: content-box` the border wouldn't affect this so the height of `.content` would be `600px` even with the borders.
+
+\_Note: Using margin as a percentage will also relate to the width of the **containing block**.
 
 ## CSS Selectors
 
@@ -179,17 +182,19 @@ The `<address>` element is like `<time>` in that it doesn’t deal with the over
 
 ```html
 <footer>
-  <p>This fake article was written by somebody at InternetingIsHard.com, which
-     is a pretty decent place to learn how to become a web developer. This footer
-     is only for the containing <code>&lt;article&gt;</code> element.</p>
+  <p>
+    This fake article was written by somebody at InternetingIsHard.com, which is a pretty decent
+    place to learn how to become a web developer. This footer is only for the containing
+    <code>&lt;article&gt;</code> element.
+  </p>
   <address>
-    Please contact <a href='mailto:troymcclure@example.com'>Troy
-    McClure</a> for questions about this article.
+    Please contact <a href="mailto:troymcclure@example.com">Troy McClure</a> for questions about
+    this article.
   </address>
 </footer>
 ```
 
-By default, this will be styled the same way as <em>, but you can change that with a simple CSS rule.
+By default, this will be styled the same way as `<em>`, but you can change that with a simple CSS rule.
 
 ### Figures and Captions
 
@@ -214,11 +219,73 @@ This means that we not only need a label for each `<input>` element, but also a 
 
 The `<textarea>` tag isn’t self-closing like the `<input>` element, so you always need a closing `</textarea>` tag. If you want to add any default text, it needs to go _inside_ the tags opposed to a `value` attribute.
 
+## CSS Text
+
+### When to use `overflow-wrap` (or legacy `word-wrap`) vs `word-break`
+
+`overflow-wrap` and `word-break` behave very similarly and can be used to solve similar problems. A basic summary of the difference, as explained in the CSS specification is:
+
+`overflow-wrap` is generally used to avoid problems with long strings causing broken layouts due to text flowing outside a container.
+`word-break` specifies soft wrap opportunities between letters commonly associated with languages like Chinese, Japanese, and Korean (CJK).
+After describing examples of how `word-break` can be used in CJK content, the spec says: "To enable additional break opportunities only in the case of overflow, see `overflow-wrap`".
+
+From this, we can surmise that `word-break` is best used with non-English content that requires specific word-breaking rules, and that might be interspersed with English content, while `overflow-wrap` should be used to avoid broken layouts due to long strings, regardless of the language used.
+
+_Note: As appsosed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
+
+#### The Historical `word-wrap` Property
+
+`overflow-wrap` is the standard name for its predecessor, the `word-wrap` property. `word-wrap` was originally a proprietary Internet Explorer-only feature that was eventually supported in all browsers despite not being a standard.
+
+`word-wrap` accepts the same values as `overflow-wrap` and behaves the same way. According to the spec, browsers "must treat `word-wrap` as an alternate name for the `overflow-wrap` property, as if it were a shorthand of `overflow-wrap`". Also, all user agents are required to support `word-wrap` indefinitely, for legacy reasons.
+
+Both `overflow-wrap` and `word-wrap` will pass CSS validation as long as the validator is set to test against CSS3 or higher (currently the default).
+
+### `white-space`
+
+The `white-space` property has nothing to do with how text wraps/breaks inside it's container, it specifies how white-space inside an element is handled.
+
+For example should white-space (spaces and line-breaks) in the code be trimmed (normal behaviour) or adhered to (such as when displaying code snippets).
+
+### `hyphens`
+
+The `hyphens` property controls hyphenation of text in block level elements. You can prevent hyphenation from happening at all, allow it, or only allow it when certain characters are present.
+
+Note that `hyphens` is language-sensitive. Its ability to find break opportunities depends on the language, defined in the lang attribute of a parent element. Not all languages are supported yet, and support depends on the specific browser.
+
 ## Web Typography
 
 ### Font Families and Font Faces
 
 The only human-friendly keywords available for `font-weight` are `normal` (400) and `bold` (700). Any other boldness levels need to set numerically.
 
+## Useful to know
+
+### `outline` and `outline-offset`
+
+The `outline` property in CSS draws a line around the outside of an element. It's similar to border except that:
+
+1. It always goes around all the sides, you can't specify particular sides
+1. It's not a part of the box model, so it won't effect the position of the element or adjacent elements.
+
+Other minor facts include that it doesn't respect `border-radius` (makes sense I suppose as it's not a border) and that it isn't always rectangular. If the outline goes around an inline element with different font-sizes, for instance, Opera will draw a staggered box around it all.
+
+It is often used for accessibility reasons, to emphasize a link when tabbed to without affecting positioning and in a different way than hover. Read more detail about `outline` on [CSS Tricks][css-tricks-outline].
+
+The `outline-offset` property adds space between an outline and the edge or border of an element. The space between an element and its outline is transparent.
+
+## Using `em`
+
+When `em` is used to specify a font-size, the `em` is measured relative to the font-size of the **parent** element.
+
+When `em` is used to specify lengths (i.e. width, padding, margin etc.) the `em` is measured relative to the font size of the **current** element.
+
+## Using percentages
+
+When `%` is used to specify a font-size, the `%` is measured relative to the font-size of the **parent** element.
+
+When `%` is used to specify lengths (i.e. width, padding, margin, etc.) the `%` is measured relative to their **parent's width**. However if specifying a height in `%` it will be a percentage of the **parent's height**.
+
 [css-tricks-scaled-content]: https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/ 'Scaled/Proportional Content with CSS and JavaScript'
+[css-tricks-outline]: https://css-tricks.com/almanac/properties/o/outline/ 'Outline'
 [pseudo-classes]: https://www.sitepoint.com/web-foundations/pseudo-classes/
