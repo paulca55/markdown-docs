@@ -52,7 +52,7 @@ CSS can be defined in 3 ways.
 - Inline boxes _don’t affect_ vertical spacing. They’re not for determining layout — they’re for styling stuff inside of a block. When it comes to margins and padding, browsers treat inline elements differently. You can add space to the left and right on an inline element, but you cannot add height to the top or bottom padding or margin of an inline element.
 - The width of inline boxes is based on the content it contains (including any left and right padding), not the width of the parent element.
 
-Note: The `vertical-align` CSS property specifies the vertical alignment of an **inline** or **table-cell** box.
+_**Note:** The `vertical-align` CSS property specifies the vertical alignment of an **inline** or **table-cell** box._
 
 ### Margins
 
@@ -122,9 +122,9 @@ Say we had a `.container` div and a `.content` div inside of it. If we set `padd
 
 The answer is `600px`. This is because this is half (`padding-bottom: 50%;`) of the width of the containing block (`.container`). This is actually a good method to keep an element in proportion when scaling down the screen size (see [CSS Tricks][css-tricks-scaled-content] for more info).
 
-Note: If you are using `box-sizing: border-box;` and had `border: 10px solid #000;` applied to the `.container` div, then the height of `.content` would be `590px`. This is because with the `10px` border on the left and the right, the actual width of the content area of `.container` is `1180px`. So 50% of this is `590px`. However if you used `box-sizing: content-box` the border wouldn't affect this so the height of `.content` would be `600px` even with the borders.
+_**Note:** If you are using `box-sizing: border-box;` and had `border: 10px solid #000;` applied to the `.container` div, then the height of `.content` would be `590px`. This is because with the `10px` border on the left and the right, the actual width of the content area of `.container` is `1180px`. So 50% of this is `590px`. However if you used `box-sizing: content-box` the border wouldn't affect this so the height of `.content` would be `600px` even with the borders._
 
-\_Note: Using margin as a percentage will also relate to the width of the **containing block**.
+_**Note:** Using margin as a percentage will also relate to the width of the **containing block**._
 
 ## CSS Selectors
 
@@ -231,7 +231,7 @@ After describing examples of how `word-break` can be used in CJK content, the sp
 
 From this, we can surmise that `word-break` is best used with non-English content that requires specific word-breaking rules, and that might be interspersed with English content, while `overflow-wrap` should be used to avoid broken layouts due to long strings, regardless of the language used.
 
-_Note: As appsosed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
+_**Note:** As appsosed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
 
 #### The Historical `word-wrap` Property
 
@@ -286,6 +286,82 @@ When `%` is used to specify a font-size, the `%` is measured relative to the fon
 
 When `%` is used to specify lengths (i.e. width, padding, margin, etc.) the `%` is measured relative to their **parent's width**. However if specifying a height in `%` it will be a percentage of the **parent's height**.
 
+When `%` is used in `transform: translate()` the `%` is measured relative to the **width** (translateX) and **height** (translateY) of the current element.
+
+## `z-index` and stacking order/stacking context
+
+_**Note:** This majority of this information was taken from [Philip Walton's website][philip-walton-z-index] but has been edited in places._
+
+### Stacking Order
+
+z-index seems so simple: elements with a higher z-index are stacked in front of elements with a lower z-index, right? Well, actually, no. This is part of the problem with z-index. It appears so simple, so most developers don’t take the time to read the rules.
+
+Every element in an HTML document can be either in front of or behind every other element in the document. This is known as the stacking order. The rules to determine this order are pretty clearly defined in the spec, but as I’ve already stated, they’re not fully understood by most developers.
+
+When the z-index and position properties aren’t involved, the rules are pretty simple: basically, the stacking order is the same as the order of appearance in the HTML. (OK, it’s actually a little more complicated than that, but as long as you’re not using negative margins to overlap inline elements, you probably won’t encounter the edge cases.)
+
+When you introduce the position property (**without specifiying a z-index**) into the mix, any positioned elements (and their children) are displayed in front of any non-positioned elements. (To say an element is “positioned” means that it has a position value other than static, e.g., relative, absolute, sticky, fixed, etc.)
+
+Finally, when z-index is involved, things get a little trickier. At first it’s natural to assume elements with higher z-index values are in front of elements with lower z-index values, and any element with a z-index is in front of any element without a z-index, but it’s not that simple. First of all, z-index only works on positioned elements. If you try to set a z-index on an element with no position specified, it will do nothing. Secondly, z-index values can create stacking contexts, and now suddenly what seemed simple just got a lot more complicated.
+
+### Stacking Contexts
+
+Groups of elements with a common parent that move forward or backward together in the stacking order make up what is known as a stacking context. A full understanding of stacking contexts is key to really grasping how z-index and the stacking order work.
+
+Every stacking context has a single HTML element as its root element. When a new stacking context is formed on an element, that stacking context confines all of its child elements to a particular place in the stacking order. That means that if an element is contained in a stacking context at the bottom of the stacking order, there is no way to get it to appear in front of another element in a different stacking context that is higher in the stacking order, even with a z-index of a billion!
+
+New stacking contexts can be formed on an element in one of three ways:
+
+- Root element of document (HTML).
+- Element has a `position` value "absolute" or "relative" and `z-index` value other than "auto".
+- Element has a `position` value "fixed" or "sticky" (sticky for all mobile browsers, but not older desktop).
+- Element that is a child of a flex (`flexbox`) container, with `z-index` value other than "auto".
+- Element has an `opacity` value less than 1.
+- Element with a `mix-blend-mode` value other than "normal".
+- Element with any of the following properties with value other than "none":
+  - transform
+  - filter
+  - perspective
+  - clip-path
+  - mask / mask-image / mask-border
+- Element with a `isolation` value "isolate".
+- Element with a `-webkit-overflow-scrolling` value "touch".
+- Element with a `will-change` value specifying any property that would create a stacking context on non-initial value (see this post).
+- Element with a `contain` value of "layout", or "paint", or a composite value that includes either of them.
+
+### Determining an Element’s Position in the Stacking Order
+
+Actually determining the global stacking order for all elements on a page (including borders, backgrounds, text nodes, etc.) is extremely complicated and far beyond the scope of this article (again, I refer you to the [spec](http://www.w3.org/TR/CSS2/zindex.html).
+
+But for most intents and purposes, a basic understanding of the order can go a long way and help keep CSS development predictable. So let’s start by breaking the order down into individual stacking contexts.
+
+#### Stacking Order Within the Same Stacking Context
+
+Here are the basic rules to determine stacking order within a single stacking context (from back to front):
+
+1. The stacking context’s root element.
+2. Positioned elements (and their children) with negative z-index values (higher values are stacked in front of lower values; elements with the same value are stacked according to appearance in the HTML).
+3. Non-positioned elements (ordered by appearance in the HTML).
+4. Positioned elements (and their children) with a z-index value of `auto` (ordered by appearance in the HTML). Note that an elements initial value for z-index is `auto` when z-index is not explicitly defined.
+5. Positioned elements (and their children) with positive z-index values (higher values are stacked in front of lower values; elements with the same value are stacked according to appearance in the HTML).
+
+_**Note:** positioned elements with negative z-indexes are ordered first within a stacking context, which means they appear behind all other elements. Because of this, it becomes possible for an element to appear behind its own parent, which is normally not possible. This will only work if the element’s parent is in the **same stacking context** and is not the root element of that stacking context. A great example of this is [Nicolas Gallagher’s CSS drop-shadows][nicolas-cs-drop-shadows] without images._
+
+#### Global Stacking Order
+
+With a firm understanding of how/when new stacking contexts are formed as well as a grasp of the stacking order within a stacking context, figuring out where a particular element will appear in the global stacking order isn’t so bad.
+
+The key to avoid getting tripped up is being able to spot when new stacking contexts are formed. If you’re setting a z-index of a billion on an element and it’s not moving forward in the stacking order, take a look up its ancestor tree and see if any of its parents form stacking contexts. If they do, your z-index of a billion isn’t going to do you any good.
+
+Read more about z-index on [MDN][mdn-z-index].
+
+Watch this video about z-index on [Kevin Powell's YouTube channel][kevin-powell-z-index].
+
 [css-tricks-scaled-content]: https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/ 'Scaled/Proportional Content with CSS and JavaScript'
 [css-tricks-outline]: https://css-tricks.com/almanac/properties/o/outline/ 'Outline'
-[pseudo-classes]: https://www.sitepoint.com/web-foundations/pseudo-classes/
+[pseudo-classes]: https://www.sitepoint.com/web-foundations/pseudo-classes/ 'Pseudo Classes'
+[philip-walton-z-index]: https://philipwalton.com/articles/what-no-one-told-you-about-z-index/ 'What No One Told You About Z-Index'
+[mdn-z-index]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index 'MDN: Understanding CSS z-index'
+[mdn-stacking-context]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context#The_stacking_context 'MDN: The Stacking Context'
+[kevin-powell-z-index]: https://www.youtube.com/watch?v=uS8l4YRXbaw 'CSS Z-Index and Stacking Context'
+[nicolas-cs-drop-shadows]: http://nicolasgallagher.com/css-drop-shadows-without-images/demo/ 'CSS drop-shadows without images'
