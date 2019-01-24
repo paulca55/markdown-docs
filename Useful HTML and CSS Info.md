@@ -261,6 +261,12 @@ The only human-friendly keywords available for `font-weight` are `normal` (400) 
 
 ## Useful to know
 
+### Form inputs and pseudo elements
+
+An `<input />` doesn’t allow the usage of `::before` or `::after` pseudo elements on it. None of the input types do.
+
+Why can’t you use these pseudo elements on inputs? Because these pseudo elements are only allowed to be used on _container_ elements. So, elements like inputs, images and any other self closing element can’t use pseudo elements because they aren’t “container elements”. Meaning, they don’t allow any nested elements or content inside of them.
+
 ### `outline` and `outline-offset`
 
 The `outline` property in CSS draws a line around the outside of an element. It's similar to border except that:
