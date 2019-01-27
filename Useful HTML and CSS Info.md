@@ -290,7 +290,7 @@ When `em` is used to specify lengths (i.e. width, padding, margin etc.) the `em`
 
 When `%` is used to specify a font-size, the `%` is measured relative to the font-size of the **parent** element.
 
-When `%` is used to specify lengths (i.e. width, padding, margin, etc.) the `%` is measured relative to their **parent's width**. However if specifying a height in `%` it will be a percentage of the **parent's height**.
+When `%` is used to specify lengths (i.e. width, padding, margin, etc.) the `%` is measured relative to their **parent's width**. However if specifying the height of an element in `%` it will be a percentage of the **parent's height**.
 
 When `%` is used in `transform: translate()` the `%` is measured relative to the **width** (translateX) and **height** (translateY) of the current element.
 
