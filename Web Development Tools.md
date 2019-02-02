@@ -190,6 +190,8 @@ _Note: Formulas are stored at `/usr/local/Cellar`._
 ### Recommended Casks
 
 - hyper
+- qlImageSize ([manual install][cask-qlimagesize])
+- [Quick Look plugins][cask-quick-look]
 
 _Note: Casks are stored at `/usr/local/Caskroom`._
 
@@ -871,3 +873,5 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [local-addon-xdebug-control]: https://github.com/lucatume/local-addon-xdebug-control 'A Local by Flywheel addon to manage XDebug settings through the UI.'
 [nodejs-vscode-debugging]: https://github.com/Microsoft/vscode-recipes/tree/master/nodemon
 [debugger-for-chrome]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'A VS Code extension to debug your JavaScript code in the Google Chrome browser'
+[cask-quick-look]: https://github.com/sindresorhus/quick-look-plugins 'Quick Look plugins'
+[cask-qlimagesize]: https://github.com/L1cardo/qlImageSize 'qlImageSize'
