@@ -93,7 +93,9 @@ A third option to avoid margin collapse is to stick to a bottom-only or top-only
 
 ### Padding as a percentage
 
-When padding is added to an element as a **percentage** (e.g. `padding-bottom: 50%;`) the amount of padding applied relates to the width of the **containing block**. See below for an example:
+When padding is added to an element as a **percentage** (e.g. `padding-bottom: 50%;`) the amount of padding applied relates to the width of the **containing block**.
+
+_**Note:** Also using a percentage for a **margin** will also relate to the width of the **containing block**._
 
 Say we had a `.container` div and a `.content` div inside of it. If we set `padding-bottom: 50%;` to the `.content` div, how many pixels of padding will be applied to the bottom of the div?
 
@@ -124,7 +126,68 @@ The answer is `600px`. This is because this is half (`padding-bottom: 50%;`) of 
 
 _**Note:** If you are using `box-sizing: border-box;` and had `border: 10px solid #000;` applied to the `.container` div, then the height of `.content` would be `590px`. This is because with the `10px` border on the left and the right, the actual width of the content area of `.container` is `1180px`. So 50% of this is `590px`. However if you used `box-sizing: content-box` the border wouldn't affect this so the height of `.content` would be `600px` even with the borders._
 
-_**Note:** Using margin as a percentage will also relate to the width of the **containing block**._
+### Constant width to height ratio
+
+#### Example 1
+
+_**Note:** This method requires the child element to be **absolutely position** inside the parent container._
+
+##### HTML
+
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
+
+##### CSS
+
+```css
+.parent {
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+```
+
+#### Example 2
+
+_**Note:** This method allows content to be placed inside the element normally._
+
+##### HTML
+
+```html
+<div class="parent">
+  <div class="child"></div>
+</div>
+```
+
+##### CSS
+
+```css
+.parent {
+  background: #333;
+  width: 50%;
+}
+.parent::before {
+  content: '';
+  padding-top: 100%;
+  float: left;
+}
+.parent::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+```
 
 ## CSS Selectors
 
@@ -272,7 +335,7 @@ Why can’t you use these pseudo elements on inputs? Because these pseudo elemen
 The `outline` property in CSS draws a line around the outside of an element. It's similar to border except that:
 
 1. It always goes around all the sides, you can't specify particular sides
-1. It's not a part of the box model, so it won't effect the position of the element or adjacent elements.
+2. It's not a part of the box model, so it won't effect the position of the element or adjacent elements.
 
 Other minor facts include that it doesn't respect `border-radius` (makes sense I suppose as it's not a border) and that it isn't always rectangular. If the outline goes around an inline element with different font-sizes, for instance, Opera will draw a staggered box around it all.
 
