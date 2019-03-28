@@ -13,6 +13,27 @@
 
 <!-- /TOC -->
 
+## WordPress redirects
+
+### URL not redirecting automatically from non-www to www version of the website.
+
+#### Solution 1
+
+Try deleting the **wp-content/cache** folder. Also empty the cache from any other caching solutions (i.e. SiteGround SuperCacher, Cloudflare, etc).
+
+#### Solution 2
+
+If solution 1 doesn't work you can add the following to your `.htaccess` file as a quick fix.
+
+```apache
+# Redirect non-www to www
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^example.co.uk [NC]
+RewriteRule ^(.*)$ https://www.example.co.uk/$1 [L,R=301]
+</IfModule>
+```
+
 ## WP Rocket
 
 ### Issue:
