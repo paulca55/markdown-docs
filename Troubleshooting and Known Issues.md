@@ -1,17 +1,30 @@
 # Troubleshooting and Known Issues
 
-<!-- TOC depthFrom:2 depthTo:2 orderedList:false updateOnSave:true withLinks:true -->
-
+- [WordPress redirects](#wordpress-redirects)
+  - [URL not redirecting automatically from non-www to www version of the website.](#url-not-redirecting-automatically-from-non-www-to-www-version-of-the-website)
 - [WP Rocket](#wp-rocket)
+  - [Issue:](#issue)
+  - [Solution:](#solution)
 - [Justified Image Grid](#justified-image-grid)
+  - [Error displayed:](#error-displayed)
+  - [Solution 1:](#solution-1)
+  - [Solution 2:](#solution-2)
 - [SuperCacher says website is not being cached](#supercacher-says-website-is-not-being-cached)
 - [The plugin batch options have disappeared](#the-plugin-batch-options-have-disappeared)
 - [Error establishing a database connection](#error-establishing-a-database-connection)
+  - [Solution 1:](#solution-1-1)
+  - [Solution 2:](#solution-2-1)
 - [Can’t connect a WordPress plugin to Google](#cant-connect-a-wordpress-plugin-to-google)
+  - [Error displayed:](#error-displayed-1)
+  - [Step 1:](#step-1)
+  - [Step 2:](#step-2)
+  - [Step 3:](#step-3)
+  - [Step 4:](#step-4)
 - [WordPress editor styles not displaying fonts properly](#wordpress-editor-styles-not-displaying-fonts-properly)
+  - [Solution 1:](#solution-1-2)
 - [Node Version Manager (NVM)](#node-version-manager-nvm)
-
-<!-- /TOC -->
+  - [Error displayed (in the terminal)](#error-displayed-in-the-terminal)
+  - [Solution](#solution)
 
 ## WordPress redirects
 

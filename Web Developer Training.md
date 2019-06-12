@@ -33,6 +33,7 @@ https://www.lynda.com
 | :-------------------------------------------------------- | :-----------: | :--------: |
 | Accessibility for Web Design                              |      2h       | ![][cross] |
 | Coercion in JavaScript                                    |    3h 18m     | ![][cross] |
+| Creating Web Icons with SVG                               |    1h 44m     | ![][tick]  |
 | CSS: Advanced Layouts with Grid                           |    2h 55m     | ![][tick]  |
 | CSS: Animation                                            |      2h       | ![][cross] |
 | CSS: Gradients                                            |    1h 13m     | ![][tick]  |
@@ -43,9 +44,10 @@ https://www.lynda.com
 | Instagram for Business                                    |     1h 7m     | ![][cross] |
 | JavaScript Essential Training                             |    5h 15m     | ![][tick]  |
 | Learning Git and GitHub                                   |    1h 20m     | ![][tick]  |
+| Learning MailChimp                                        |    1h 50m     | ![][tick]  |
 | Learning Regular Expressions                              |    5h 36m     | ![][cross] |
 | Learning Slack                                            |    2h 35m     | ![][tick]  |
-| Learning SVG                                              |    2h 30m     | ![][cross] |
+| Learning SVG                                              |    2h 30m     | ![][tick]  |
 | Learning Responsive Web Design in the Browser             |    1h 51m     | ![][tick]  |
 | Making Sense of the CSS Box Model                         |      50m      | ![][tick]  |
 | Marketing Foundations: Social Media                       |    1h 56m     | ![][cross] |

@@ -1,9 +1,8 @@
 # WordPress Snippets
 
-- [WordPress Snippets](#wordpress-snippets)
-  - [Disable WP Search Functionality](#disable-wp-search-functionality)
-  - [Disable WordPress Emoticons](#disable-wordpress-emoticons)
-  - [Using JSON data from a WordPress post](#using-json-data-from-a-wordpress-post)
+- [Disable WP Search Functionality](#disable-wp-search-functionality)
+- [Disable WordPress Emoticons](#disable-wordpress-emoticons)
+- [Using JSON data from a WordPress post](#using-json-data-from-a-wordpress-post)
 
 ## Disable WP Search Functionality
 

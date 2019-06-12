@@ -1,12 +1,12 @@
 # The way it all works
 
-<!-- TOC depthFrom:2 depthTo:2 orderedList:false updateOnSave:true withLinks:true -->
-
 - [Image sizes in WordPress](#image-sizes-in-wordpress)
 - [Imagify Plugin](#imagify-plugin)
+  - [Custom Header](#custom-header)
+  - [Bulk Optimisation](#bulk-optimisation)
 - [FontAwesome 5](#fontawesome-5)
-
-<!-- /TOC -->
+  - [Basic Use](#basic-use)
+  - [CSS Pseudo-elements](#css-pseudo-elements)
 
 ## Image sizes in WordPress
 
@@ -76,9 +76,9 @@ _Note: If you need to add icons using pseudo-elements you must use **Web Fonts w
 ### CSS Pseudo-elements
 
 1.  Set the pseudo-element to either `::before` or `::after`
-1.  Set the `font-family` to `Font Awesome 5 Free`, `Font Awesome Brands` or `Font Awesome 5 Pro` (depending on which one you are using)
-1.  Set the `font-weight`: 900 (Solid), 400 (Regular or Brands), 300 (Light)
-1.  Set the `content` to the unicode value of the icon you want to use.
+2.  Set the `font-family` to `Font Awesome 5 Free`, `Font Awesome Brands` or `Font Awesome 5 Pro` (depending on which one you are using)
+3.  Set the `font-weight`: 900 (Solid), 400 (Regular or Brands), 300 (Light)
+4.  Set the `content` to the unicode value of the icon you want to use.
 
 ```css
 .login::before {

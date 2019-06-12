@@ -1,16 +1,41 @@
 # Useful HTML and CSS Info
 
-<!-- TOC depthFrom:2 depthTo:2 orderedList:false updateOnSave:true withLinks:true -->
-
 - [Links and Images](#links-and-images)
+  - [Absolute, Relative, and Root-relative Links](#absolute-relative-and-root-relative-links)
+  - [Image Dimensions](#image-dimensions)
 - [Hello, CSS](#hello-css)
+  - [The Cascade](#the-cascade)
 - [CSS Box Model](#css-box-model)
+  - [Block Elements and Inline Elements](#block-elements-and-inline-elements)
+  - [Margins](#margins)
+  - [Margins on Inline Elements](#margins-on-inline-elements)
+  - [Preventing Margin Collapse](#preventing-margin-collapse)
+  - [Padding as a percentage](#padding-as-a-percentage)
+  - [Constant width to height ratio](#constant-width-to-height-ratio)
 - [CSS Selectors](#css-selectors)
+  - [Pseudo-classes for Links](#pseudo-classes-for-links)
 - [Semantic HTML](#semantic-html)
+  - [Sections](#sections)
+  - [Address](#address)
+  - [Figures and Captions](#figures-and-captions)
 - [HTML Forms](#html-forms)
+  - [Radio buttons](#radio-buttons)
+  - [Text Areas](#text-areas)
+- [CSS Text](#css-text)
+  - [When to use `overflow-wrap` (or legacy `word-wrap`) vs `word-break`](#when-to-use-overflow-wrap-or-legacy-word-wrap-vs-word-break)
+  - [`white-space`](#white-space)
+  - [`hyphens`](#hyphens)
 - [Web Typography](#web-typography)
-
-<!-- /TOC -->
+  - [Font Families and Font Faces](#font-families-and-font-faces)
+- [Useful to know](#useful-to-know)
+  - [Form inputs and pseudo elements](#form-inputs-and-pseudo-elements)
+  - [`outline` and `outline-offset`](#outline-and-outline-offset)
+- [Using `em`](#using-em)
+- [Using percentages](#using-percentages)
+- [`z-index` and stacking order/stacking context](#z-index-and-stacking-orderstacking-context)
+  - [Stacking Order](#stacking-order)
+  - [Stacking Contexts](#stacking-contexts)
+  - [Determining an Element’s Position in the Stacking Order](#determining-an-elements-position-in-the-stacking-order)
 
 ## Links and Images
 
@@ -290,11 +315,12 @@ The `<textarea>` tag isn’t self-closing like the `<input>` element, so you alw
 
 `overflow-wrap` is generally used to avoid problems with long strings causing broken layouts due to text flowing outside a container.
 `word-break` specifies soft wrap opportunities between letters commonly associated with languages like Chinese, Japanese, and Korean (CJK).
+
 After describing examples of how `word-break` can be used in CJK content, the spec says: "To enable additional break opportunities only in the case of overflow, see `overflow-wrap`".
 
 From this, we can surmise that `word-break` is best used with non-English content that requires specific word-breaking rules, and that might be interspersed with English content, while `overflow-wrap` should be used to avoid broken layouts due to long strings, regardless of the language used.
 
-_**Note:** As appsosed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
+_**Note:** As apposed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
 
 #### The Historical `word-wrap` Property
 
