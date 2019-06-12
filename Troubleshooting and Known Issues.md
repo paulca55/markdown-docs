@@ -1,5 +1,6 @@
 # Troubleshooting and Known Issues
 
+- [WordPress Cron Jobs not working/queuing up](#wordpress-cron-jobs-not-workingqueuing-up)
 - [WordPress redirects](#wordpress-redirects)
   - [URL not redirecting automatically from non-www to www version of the website.](#url-not-redirecting-automatically-from-non-www-to-www-version-of-the-website)
 - [WP Rocket](#wp-rocket)
@@ -9,7 +10,6 @@
   - [Error displayed:](#error-displayed)
   - [Solution 1:](#solution-1)
   - [Solution 2:](#solution-2)
-- [SuperCacher says website is not being cached](#supercacher-says-website-is-not-being-cached)
 - [The plugin batch options have disappeared](#the-plugin-batch-options-have-disappeared)
 - [Error establishing a database connection](#error-establishing-a-database-connection)
   - [Solution 1:](#solution-1-1)
@@ -26,11 +26,17 @@
   - [Error displayed (in the terminal)](#error-displayed-in-the-terminal)
   - [Solution](#solution)
 
+## WordPress Cron Jobs not working/queuing up
+
+#### Solution 1
+
+This can be caused by the `wp-content/object-cache.php` file. Try deleting this file **if not needed**, maybe also try deleting/renaming other *cache* folders and files to se if they are causing the issue.
+
 ## WordPress redirects
 
 ### URL not redirecting automatically from non-www to www version of the website.
 
-#### Solution 1
+#### Solution
 
 Try deleting the **wp-content/cache** folder. Also empty the cache from any other caching solutions (i.e. SiteGround SuperCacher, Cloudflare, etc).
 
@@ -76,10 +82,6 @@ This may not work and the image will still be served by the CDN. In this situati
 ### Solution 2:
 
 Although this is not recommended, as a last resort you can **disable TimThumb** from the Justified Image Plugin settings.
-
-## SuperCacher says website is not being cached
-
-This error occurs because WP Rocket is already caching the website so it throws up an error. According to SiteGround you can ignore the error and be assured that the website is being cached properly even if you check the **Dynamic Cache Status** and it returns **NOT CACHED**.
 
 ## The plugin batch options have disappeared
 
