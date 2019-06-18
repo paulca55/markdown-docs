@@ -28,15 +28,19 @@
 
 ## WordPress Cron Jobs not working/queuing up
 
-#### Solution 1
+#### Possible Solution
 
-This can be caused by the `wp-content/object-cache.php` file. Try deleting this file **if not needed**, maybe also try deleting/renaming other *cache* folders and files to se if they are causing the issue.
+This can be caused by the `wp-content/object-cache.php` file (if present). Try deleting this file **if it is not needed** but take a copy first just in case.
+
+Maybe also try deleting/renaming other _cache_ folders and files to see if they are causing the issue.
+
+_Note: You will probably have to run all the Cron jobs manually via WP-CLI to clear the queue with the `wp cron event run --all` command first, and then check to see if scheduled jobs are working as they should._
 
 ## WordPress redirects
 
 ### URL not redirecting automatically from non-www to www version of the website.
 
-#### Solution
+#### Solution 1
 
 Try deleting the **wp-content/cache** folder. Also empty the cache from any other caching solutions (i.e. SiteGround SuperCacher, Cloudflare, etc).
 
