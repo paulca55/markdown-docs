@@ -36,6 +36,8 @@ Maybe also try deleting/renaming other _cache_ folders and files to see if they 
 
 _Note: You will probably have to run all the Cron jobs manually via WP-CLI to clear the queue with the `wp cron event run --all` command first, and then check to see if scheduled jobs are working as they should._
 
+_Note: The `object-cache.php` file can be created by plugins such as SiteGround's SG Optimizer when you enable memcached on the server and in the plugin settings._
+
 ## WordPress redirects
 
 ### URL not redirecting automatically from non-www to www version of the website.
