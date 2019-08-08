@@ -487,9 +487,11 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - SVG Viewer
 - TODO Highlight
 - Trailing Spaces
+- Turbo Console Log
 - Version Lens
 - vscode-faker
 - vscode-pandoc
+- Wakatime
 - WordPress Toolbox
 
 ### Packages (replaced by built-in functionality)
