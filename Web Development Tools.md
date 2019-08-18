@@ -415,7 +415,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 
 ## VS Code
 
-### Packages
+### Extensions
 
 - ACF-Snippet
 - Advanced New File
@@ -436,6 +436,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - ECMAScript Quotes Transformer
 - EditorConfig for VS Code
 - ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is useful for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
+- expand-region
 - Express
 - File Utils
 - Git Project Manager
@@ -451,9 +452,10 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Insert Numbers
 - JavaScript (ES6) code snippets
 - javascript console utils
+- JavaScript Snippet Pack
 - jQuery Code Snippets
 - lit-html
-- Macros
+- macros
 - Markdown All in One
 - markdownlint
 - Node.js Modules Intellisense
@@ -464,8 +466,8 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - PHP Debug
 - PHP Intelephense
 - PHP Intellisense
-- phpcs
 - phpcbf _-the actual tool `phpcbf` is installed as part of `phpcs`._
+- phpcs
 - Polacode
 - PostCSS Sorting
 - Prettier _- if you want Prettier to use `ESLint` and `Stylelint` rules, make sure you set this up in the VS Code settings. See the extension instructions._
@@ -476,12 +478,13 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Quokka.js
 - React Native Tools
 - Reactjs code snippets
+- Save and Run
 - SCSS IntelliSense
 - Search WordPress Docs
 - Settings Sync
 - snippet-creator
 - Sort JSON Objects
-- Sort Lines
+- Sort lines
 - stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets. If you want to order CSS properties you need to install the `styleline-order` npm package in the workspace but note this requires the `stylelint` npm package to be installed in the workspace too._
 - SVG
 - SVG Viewer
@@ -492,9 +495,10 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - vscode-faker
 - vscode-pandoc
 - Wakatime
-- WordPress Toolbox
+- Word Count
+- WordPress Snippets
 
-### Packages (replaced by built-in functionality)
+### Extensions (replaced by built-in functionality)
 
 - IntelliSense for CSS class names
 - HTML Snippets
