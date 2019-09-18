@@ -320,7 +320,7 @@ After describing examples of how `word-break` can be used in CJK content, the sp
 
 From this, we can surmise that `word-break` is best used with non-English content that requires specific word-breaking rules, and that might be interspersed with English content, while `overflow-wrap` should be used to avoid broken layouts due to long strings, regardless of the language used.
 
-_**Note:** As apposed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
+_**Note:** As opposed to `word-break`, `overflow-wrap` will only create a break if an entire word cannot be placed on its own line without overflowing, unless `word-break` is set to `break-word` which is not fully supported._
 
 #### The Historical `word-wrap` Property
 

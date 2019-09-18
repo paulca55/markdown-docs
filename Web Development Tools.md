@@ -463,6 +463,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - npm Intellisense
 - Output Colorizer
 - Path Intellisense
+- Peacock
 - PHP Debug
 - PHP Intelephense
 - PHP Intellisense
