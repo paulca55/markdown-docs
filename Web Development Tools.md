@@ -455,6 +455,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - JavaScript Snippet Pack
 - jQuery Code Snippets
 - lit-html
+- Live Share
 - macros
 - Markdown All in One
 - markdownlint
