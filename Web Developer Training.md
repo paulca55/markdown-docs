@@ -202,5 +202,15 @@ https://courses.ahmadawais.com
 | :--------- | :-------: |
 | VSCode.pro | ![][tick] |
 
+## Ultimate Courses
+
+https://ultimatecourses.com
+
+### Courses
+
+| Course            |           |
+| :---------------- | :-------: |
+| JavaScript Basics | ![][tick] |
+
 [tick]: images/tick-icon.png 'Completed'
 [cross]: images/cross-icon.png 'Not Completed'
