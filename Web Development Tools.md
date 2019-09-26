@@ -752,7 +752,7 @@ _Note: You can add `-C "your comment here"` to add a comment to your generated k
 
    This will create a private key called `id_rsa` and a public key called `id_rsa.pub`.
 
-   \_Note: If you want to give the key a different name add the `-f` option (e.g. `ssh-keygen -t rsa -b 4096 -f github_rsa`). Note this will create the the keys `github_rsa` and `github_rsa.pub` in the current working directory of the terminal.
+   _Note: If you want to give the key a different name add the `-f` option (e.g. `ssh-keygen -t rsa -b 4096 -f github_rsa`). Note this will create the the keys `github_rsa` and `github_rsa.pub` in the current working directory of the terminal._
 
 1. At the prompt, type a secure passphrase.
 
@@ -805,6 +805,7 @@ Host somealias
 Host github.com
    HostName github.com
    User git
+   IdentityFile ~/.ssh/id_rsa
 
 # GitHub (Work Account)
 Host github.com-workaccount
@@ -812,14 +813,13 @@ Host github.com-workaccount
    User git
    IdentityFile ~/.ssh/work_rsa
 
-# Fallback for all other SSH connections. The below settings wil also be applied to the above if something has been omitted (e.g. IdentityFile, UseKeyChain, etc.)
+# Fallback for all other SSH connections. The below settings wil also be applied to the above if something has been omitted (e.g. AddKeysToAgent, UseKeyChain, etc.)
 Host *
   AddKeysToAgent yes
   UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
 ```
 
-_Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git]._
+_Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git] if you need to push changes from multiple accounts. If you only need to push changes to a git repo **as yourself**, not the owner of the repo, you just need to be added as a collaborator in the GitHub dashboard. This will then use your own SSH key to push the changes, you don't need to mess around with adding a new SSH key ._
 
 ### Some `ssh-add` tricks
 
