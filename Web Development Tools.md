@@ -797,15 +797,14 @@ Example of using an alias. You can then connect with 'ssh cassify' in the termin
 ```shell
 # Web Hosting
 Host somealias
-  User someuser
   HostName example.co.uk
+  User someuser
   Port 18765
 
 # GitHub (Personal)
 Host github.com
    HostName github.com
    User git
-   IdentityFile ~/.ssh/id_rsa
 
 # GitHub (Work Account)
 Host github.com-workaccount
@@ -813,10 +812,12 @@ Host github.com-workaccount
    User git
    IdentityFile ~/.ssh/work_rsa
 
-# Fallback for all other SSH connections. The below settings wil also be applied to the above if something has been omitted (e.g. AddKeysToAgent, UseKeyChain, etc.)
+# The below settings will also be applied to the above connections (and new connections) if something has been omitted (e.g. IdentityFile, AddKeysToAgent, UseKeyChain, etc). However, these settings will not override anything that has already been set above.
+
 Host *
-  AddKeysToAgent yes
   UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
 ```
 
 _Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git] if you need to push changes from multiple accounts. If you only need to push changes to a git repo **as yourself**, not the owner of the repo, you just need to be added as a collaborator in the GitHub dashboard. This will then use your own SSH key to push the changes, you don't need to mess around with adding a new SSH key ._
