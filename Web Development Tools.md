@@ -131,11 +131,11 @@ plugins=(git extract osx npm z)
 
 To add a **custom plugin** you'll need to either use homebrew or manually copy the plugin files to the custom plugin path (see below).
 
-_Note: ZSH bundled plugins are stored a- `/Users/paul/.oh-my-zsh/plugins`._
+_Note: ZSH bundled plugins are stored at - `/Users/paul/.oh-my-zsh/plugins`._
 
-_Note: ZSH custom plugins are stored a- `/Users/paul/.oh-my-zsh/custom/plugins`._
+_Note: ZSH custom plugins are stored at - `/Users/paul/.oh-my-zsh/custom/plugins`._
 
-Once you’ve added a plugin, you’ll need to either run `source ~/.zshrc` or open
+Once you’ve added a plugin, you will need to either run `source ~/.zshrc` or open
 a new terminal tab.
 
 ##### Recommended Oh-My-ZSH Plugins
@@ -800,11 +800,13 @@ Host somealias
   HostName example.co.uk
   User someuser
   Port 18765
+  IdentityFile ~/.ssh/id_rsa
 
 # GitHub (Personal)
 Host github.com
    HostName github.com
    User git
+   IdentityFile ~/.ssh/id_rsa
 
 # GitHub (Work Account)
 Host github.com-workaccount
@@ -812,12 +814,11 @@ Host github.com-workaccount
    User git
    IdentityFile ~/.ssh/work_rsa
 
-# The below settings will also be applied to the above connections (and new connections) if something has been omitted (e.g. IdentityFile, AddKeysToAgent, UseKeyChain, etc). However, these settings will not override anything that has already been set above.
+# The below settings will also be applied to the above connections (and new connections) if something has been omitted above (e.g. IdentityFile, AddKeysToAgent, UseKeyChain, etc).
 
 Host *
   UseKeychain yes
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_rsa
 ```
 
 _Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git] if you need to push changes from multiple accounts. If you only need to push changes to a git repo **as yourself**, not the owner of the repo, you just need to be added as a collaborator in the GitHub dashboard. This will then use your own SSH key to push the changes, you don't need to mess around with adding a new SSH key ._

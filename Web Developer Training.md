@@ -178,11 +178,10 @@ https://www.udemy.com
 
 https://www.udacity.com
 
-| Course                      |            |
-| :-------------------------- | :--------: |
-| Intro to JavaScript         | ![][tick]  |
-| Web Accessibility           | ![][cross] |
-| Web Accessibilitfsdfsdfsdfy | ![][cross] |
+| Course              |            |
+| :------------------ | :--------: |
+| Intro to JavaScript | ![][tick]  |
+| Web Accessibility   | ![][cross] |
 
 ## Watch and Code
 
