@@ -159,6 +159,7 @@ https://www.udemy.com
 | Git a Web Developer Job: Mastering the Modern Workflow          |    15h 30m    | ![][tick]  |
 | Git Complete: The definitive, step-by-step guide to Git         |      6h       | ![][cross] |
 | JavaScript Algorithms                                           |    6h 30m     | ![][cross] |
+| JavaScript Algorithms and Data Structures Masterclass           |    21h 30m    | ![][cross] |
 | JavaScript: Understanding the Weird Parts                       |    11h 30m    | ![][cross] |
 | Landing Page Design & Conversion Rate Optimization 2018         |      10h      | ![][cross] |
 | Learn Figma - UI/UX Design Essential Training                   |      4h       | ![][cross] |
