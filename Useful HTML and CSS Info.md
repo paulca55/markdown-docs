@@ -452,6 +452,44 @@ Read more about z-index on [MDN][mdn-z-index].
 
 Watch this video about z-index on [Kevin Powell's YouTube channel][kevin-powell-z-index].
 
+## Inherit, Initial, Unset and Revert
+
+### Inherit
+
+The `inherit` value for a **non-inherited property** (e.g. `padding` or `border`) represents the value of the element's **immediate parent** for the same property.
+
+If the property is not explicitly defined for the parent element it will not keep travelling up the element's parents to find a value for that property that has been explicitly defined.
+
+### Initial
+
+The initial value represents the default value for the property, as defined by the [official CSS Specification](https://www.w3.org/TR/CSS/). For example, for a <p> element, `text-align` is `left` and `display` is `inline`.
+
+### Unset
+
+The `unset` value is sort of a combination of `initial` and `inherit`.
+
+There are some properties that, if not explicitly specified, will default to `inherit`. For example, if we set the `color` for an element, it applies to all child elements by default. Whereas other properties, like `border`, do not inherit by default.
+
+When `unset` is applied to a property, it will apply either `initial` or `inherit`, depending on what the property's default behaviour is. If the property by default inherits, the `inherit` will be applied. Otherwise, `initial` will be applied.
+
+For the `border` property, the `initial` value is applied whereas for the `color` property, the `inherit` value is applied.
+
+### Revert
+
+The `revert` value represents whatever value the property would be if nothing was applied to it at all.
+
+If no value is applied to a property in the author stylesheet (the styles we as the webpage authors write), the following steps are taken to find a value:
+
+1. The **user defined stylesheet** is checked for styles applied to that element.
+2. If nothing is found, the **user agent stylesheet** is checked.
+3. If nothing is found, the equivalent of `unset` is applied.
+
+### Further reading
+
+[Initial, Inherit, Unset, and Revert (bitsofcode)][bitsofcode-css-revert]
+
+[How to REVERT CSS - get back to default browser style (Mozilla Developer)][mozdev-css-revert]
+
 [css-tricks-scaled-content]: https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/ 'Scaled/Proportional Content with CSS and JavaScript'
 [css-tricks-outline]: https://css-tricks.com/almanac/properties/o/outline/ 'Outline'
 [pseudo-classes]: https://www.sitepoint.com/web-foundations/pseudo-classes/ 'Pseudo Classes'
@@ -460,3 +498,5 @@ Watch this video about z-index on [Kevin Powell's YouTube channel][kevin-powell-
 [mdn-stacking-context]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context#The_stacking_context 'MDN: The Stacking Context'
 [kevin-powell-z-index]: https://www.youtube.com/watch?v=uS8l4YRXbaw 'CSS Z-Index and Stacking Context'
 [nicolas-cs-drop-shadows]: http://nicolasgallagher.com/css-drop-shadows-without-images/demo/ 'CSS drop-shadows without images'
+[bitsofcode-css-revert]: https://bitsofco.de/initial-inherit-unset-and-revert/ 'Initial, Inherit, Unset, and Revert'
+[mozdev-css-revert]: https://www.youtube.com/watch?v=GAjoVRmipcU
