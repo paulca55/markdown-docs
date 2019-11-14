@@ -490,6 +490,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets. If you want to order CSS properties you need to install the `styleline-order` npm package in the workspace but note this requires the `stylelint` npm package to be installed in the workspace too._
 - SVG
 - SVG Viewer
+- Todo Tree
 - TODO Highlight
 - Trailing Spaces
 - Turbo Console Log
