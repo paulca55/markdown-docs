@@ -211,6 +211,8 @@ _Note: The path for `nvm` installations of Node is `/Users/paul/.nvm/versions/no
 
 _Note: nvm can be upgraded using the command `nvm upgrade`._
 
+_Note: You can set a Node version default using the command `nvm alias default 12.3.1` so each time you open a new shell window it will default to your specified version._
+
 **Test command:** `node -v`
 
 ### Node Package Manager (npm)
