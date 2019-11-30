@@ -449,6 +449,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Highlight Matching Tag
 - HTML CSS Support
 - HTMLHint
+- HubL Visual Studio Code Language Extension
 - Import Cost
 - indent-rainbow
 - Insert Numbers
