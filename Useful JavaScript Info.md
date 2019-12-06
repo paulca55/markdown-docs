@@ -35,6 +35,7 @@ document.children;
 #### Option 2
 
 ```JavaScript
+document.getElementsByName('up');
 document.querySelectorAll('.abc');
 document.body.childNodes;
 ```
