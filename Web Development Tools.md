@@ -487,6 +487,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - SCSS IntelliSense
 - Search WordPress Docs
 - Settings Sync
+- Shopify Liquid Template Snippets
 - snippet-creator
 - Sort JSON Objects
 - Sort lines
