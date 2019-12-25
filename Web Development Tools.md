@@ -22,20 +22,20 @@
   - [Global Install (system-wide)](#global-install-system-wide)
   - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)
 - [VS Code](#vs-code)
-  - [Packages](#packages)
-  - [Packages (replaced by built-in functionality)](#packages-replaced-by-built-in-functionality)
+  - [Extensions](#extensions)
+  - [Extensions (replaced by built-in functionality)](#extensions-replaced-by-built-in-functionality)
   - [Themes](#themes)
   - [Icons](#icons)
 - [Debugging](#debugging)
   - [Debugging Modern JavaScript](#debugging-modern-javascript)
-  - [Debugging with Chrome & React.js Framework](#debugging-with-chrome--reactjs-framework)
+  - [Debugging with Chrome &amp; React.js Framework](#debugging-with-chrome-amp-reactjs-framework)
   - [Node.js](#nodejs)
   - [VS Code WordPress Debugging Setup using Xdebug and Local by Flywheel](#vs-code-wordpress-debugging-setup-using-xdebug-and-local-by-flywheel)
 - [SSH](#ssh)
   - [Generating a new SSH key](#generating-a-new-ssh-key)
   - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)
   - [SSH config file](#ssh-config-file)
-  - [Some `ssh-add` tricks](#some-ssh-add-tricks)
+  - [Some ssh-add tricks](#some-ssh-add-tricks)
 
 ## Command-Line Tools
 
@@ -207,13 +207,19 @@ _Note: You may need to add the path to your system PATH in the `.zshrc` file (e.
 
 The best way to install and manage Node.js is using **Node Version Manager (nvm)**. When using ZSH and Oh-My-ZSH! it's easiest to install `nvm` via the Oh-My-ZSH! custom plugin `zsh-nvm`. If not you can install it via Homebrew but be careful as it is not officially supported.
 
+**Test command:** `node -v`
+
 _Note: The path for `nvm` installations of Node is `/Users/paul/.nvm/versions/node`._
 
 _Note: nvm can be upgraded using the command `nvm upgrade`._
 
 _Note: You can set a Node version default using the command `nvm alias default 12.3.1` so each time you open a new shell window it will default to your specified version._
 
-**Test command:** `node -v`
+#### Useful Links
+
+- [Installing `zsh-nvm` via Oh My ZSH! custom plugin][zsh-nvm]
+- [Installing a New Node Version and Migrating npm Global Packages][nvm-install1]
+- [Update nvm installed node version and keep globally installed packages][nvm-install2]
 
 ### Node Package Manager (npm)
 
@@ -227,6 +233,8 @@ npm install npm -g
 
 **Test command:** `npm -v`
 
+_Note: You can use the command `npm root -g` to show where global node_modules folder is._
+
 #### Possible Issues
 
 If the test above doesn’t display a _npm_ version, you may have to add _npm_ to the
@@ -238,11 +246,12 @@ Install the following npm packages globally:
 
 - gulp-cli _- 1.2+ supports Gulp 3 and 4 out of the box._
 - eslint
+- htmlhint
 - jasmine
 - live-server
-- modernizr _(run the following command to create the modernizr files based on
-  the config file you specify_ - `modernizr -c modernizr-config.json`)
 - parcel
+- parker
+- pug-lint
 - webpack
 
 **Example:** `npm install <package> -g`
@@ -884,6 +893,9 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [zsh]: https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH 'ZSH'
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh/ 'Oh-My-ZSH'
 [oh-my-zsh-plugins]: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins 'Oh-My-ZSH Plugins'
+[zsh-nvm]: https://github.com/lukechilds/zsh-nvm#as-an-oh-my-zsh-custom-plugin 'Installing zsh-nvm via Oh My ZSH! custom plugin'
+[nvm-install1]: https://dev.to/andy/installing-a-new-node-version-and-migrating-npm-global-packages-4no3 'Installing a New Node Version and Migrating npm Global Packages'
+[nvm-install2]: https://eriksamuelsson.com/update-nvm-installed-node-version-and-keep-globally-installed-packages/ 'Update nvm installed node version and keep globally installed packages'
 [brew]: https://brew.sh/ 'Homebrew'
 [wpcs&phpcs]: https://github.com/tommcfarlin/phpcs-wpcs-vscode 'WPCS and PHPCS'
 [multiple-git]: https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca 'How to manage multiple GitHub accounts on a single machine with SSH keys'
@@ -891,7 +903,7 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [ahmad-awais]: https://ahmadawais.com/ 'Ahmad Awais - Developer Advocate for JavaScript & Open Source'
 [php-debug]: https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug 'PHP Debug Adapter for Visual Studio Code'
 [local-addon-xdebug-control]: https://github.com/lucatume/local-addon-xdebug-control 'A Local by Flywheel addon to manage XDebug settings through the UI.'
-[nodejs-vscode-debugging]: https://github.com/Microsoft/vscode-recipes/tree/master/nodemon
+[nodejs-vscode-debugging]: https://github.com/Microsoft/vscode-recipes/tree/master/nodemon 'Node.js debugging in VS Code with Nodemon'
 [debugger-for-chrome]: https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome 'A VS Code extension to debug your JavaScript code in the Google Chrome browser'
 [cask-quick-look]: https://github.com/sindresorhus/quick-look-plugins 'Quick Look plugins'
 [cask-qlimagesize]: https://github.com/L1cardo/qlImageSize 'qlImageSize'

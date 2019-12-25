@@ -22,20 +22,26 @@
   - [Radio buttons](#radio-buttons)
   - [Text Areas](#text-areas)
 - [CSS Text](#css-text)
-  - [When to use `overflow-wrap` (or legacy `word-wrap`) vs `word-break`](#when-to-use-overflow-wrap-or-legacy-word-wrap-vs-word-break)
-  - [`white-space`](#white-space)
-  - [`hyphens`](#hyphens)
+  - [When to use overflow-wrap (or legacy word-wrap) vs word-break](#when-to-use-overflow-wrap-or-legacy-word-wrap-vs-word-break)
+  - [white-space](#white-space)
+  - [hyphens](#hyphens)
 - [Web Typography](#web-typography)
   - [Font Families and Font Faces](#font-families-and-font-faces)
 - [Useful to know](#useful-to-know)
   - [Form inputs and pseudo elements](#form-inputs-and-pseudo-elements)
-  - [`outline` and `outline-offset`](#outline-and-outline-offset)
-- [Using `em`](#using-em)
+  - [outline and outline-offset](#outline-and-outline-offset)
+- [Using em](#using-em)
 - [Using percentages](#using-percentages)
-- [`z-index` and stacking order/stacking context](#z-index-and-stacking-orderstacking-context)
+- [z-index and stacking order/stacking context](#z-index-and-stacking-orderstacking-context)
   - [Stacking Order](#stacking-order)
   - [Stacking Contexts](#stacking-contexts)
   - [Determining an Element’s Position in the Stacking Order](#determining-an-elements-position-in-the-stacking-order)
+- [Inherit, Initial, Unset and Revert](#inherit-initial-unset-and-revert)
+  - [Inherit](#inherit)
+  - [Initial](#initial)
+  - [Unset](#unset)
+  - [Revert](#revert)
+  - [Further reading](#further-reading)
 
 ## Links and Images
 
@@ -458,7 +464,7 @@ Watch this video about z-index on [Kevin Powell's YouTube channel][kevin-powell-
 
 The `inherit` value for a **non-inherited property** (e.g. `padding` or `border`) represents the value of the element's **immediate parent** for the same property.
 
-If the property is not explicitly defined for the parent element it will not keep travelling up the element's parents to find a value for that property that has been explicitly defined.
+If the property is not explicitly defined for the parent element it **will not** keep travelling up the element's parents to find a value for that property that has been explicitly defined.
 
 ### Initial
 
@@ -470,15 +476,15 @@ The `unset` value is sort of a combination of `initial` and `inherit`.
 
 There are some properties that, if not explicitly specified, will default to `inherit`. For example, if we set the `color` for an element, it applies to all child elements by default. Whereas other properties, like `border`, do not inherit by default.
 
-When `unset` is applied to a property, it will apply either `initial` or `inherit`, depending on what the property's default behaviour is. If the property by default inherits, the `inherit` will be applied. Otherwise, `initial` will be applied.
+When `unset` is applied to a property, it will apply either `initial` or `inherit`, depending on what the property's default behaviour is. If the property by default inherits, the `inherit` will be applied, otherwise `initial` will be applied.
 
-For the `border` property, the `initial` value is applied whereas for the `color` property, the `inherit` value is applied.
+For example, with the `border` property the `initial` value is applied, whereas with the `color` property the `inherit` value is applied.
 
 ### Revert
 
 The `revert` value represents whatever value the property would be if nothing was applied to it at all.
 
-If no value is applied to a property in the author stylesheet (the styles we as the webpage authors write), the following steps are taken to find a value:
+If no value is applied to a property in the author stylesheet (the styles we as the web page authors write), the following steps are taken to find a value:
 
 1. The **user defined stylesheet** is checked for styles applied to that element.
 2. If nothing is found, the **user agent stylesheet** is checked.
