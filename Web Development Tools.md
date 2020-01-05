@@ -295,7 +295,71 @@ For example in your `.zshrc` file:
 export PATH=/Users/paul/.composer/vendor/bin:$PATH
 ```
 
-## PHP_CodeSniffer and WordPress Coding Standards (with VS Code)
+## Using ESLint and Stylelint with Prettier and VS Code
+
+Prettier will be used for **code formatting rules** and ESLint/Stylelint are used for **code quality rules**. Prettier rules can conflict with ESLint/Stylelint rules so you need to disable any ESLint/Stylelint rules that relate to code formatting, and only use Prettier rules set in the `.prettierrc.json` file. You can look at a previous project or follow the instructions in the links below on how to do this.
+
+[Integrating Prettier with Linters][prettier-linters]
+
+[stylelint-prettier package][stylelint-prettier]
+
+[eslint-plugin-prettier package][eslint-plugin-prettier]
+
+### npm packages needed
+
+- eslint
+- eslint-config-prettier
+- eslint-plugin-prettier
+- prettier
+- stylelint
+- stylelint-config-prettier
+- stylelint-config-recommended
+- stylelint-prettier
+
+### Files needed
+
+`.stylelintrc.json`
+
+```json
+{
+  "extends": ["stylelint-config-recommended", "stylelint-prettier/recommended"]
+}
+```
+
+`.eslintrc.json`
+
+```json
+{
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"]
+}
+```
+
+`.prettierrc.json`
+
+```json
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}
+```
+
+### VS Code Extensions
+
+- ESLint
+- Prettier - Code formatter
+- stylelint
+
+### VS Code Settings
+
+We need to tell VS Code to run Prettier and format the document when the document is saved. ESLint _could_ also be configured to autofix certain rules but we don't want this functionality, we only want ESLint to show errors/warnings in the VS Code problems window.
+
+```json
+"editor.formatOnSave": true
+```
+
+## PHP_CodeSniffer and WordPress Coding Standards with VS Code
 
 _Note: The following steps assume you have PHP installed and globally accessible
 on your system._
@@ -485,7 +549,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - phpcs
 - Polacode
 - PostCSS Sorting
-- Prettier _- if you want Prettier to use `ESLint` and `Stylelint` rules, make sure you set this up in the VS Code settings. See the extension instructions._
+- Prettier\_
 - Project Manager
 - pug
 - Pug to HTML
@@ -501,7 +565,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - snippet-creator
 - Sort JSON Objects
 - Sort lines
-- stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets. If you want to order CSS properties you need to install the `styleline-order` npm package in the workspace but note this requires the `stylelint` npm package to be installed in the workspace too._
+- stylelint _- this extension adds `stylelint` and reports errors in the 'Problems' tab. The npm package `stylelint-config-recommended` is required to be installed in the workspace if you want to extend these config presets._
 - SVG
 - SVG Viewer
 - Todo Tree
@@ -897,6 +961,9 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [nvm-install1]: https://dev.to/andy/installing-a-new-node-version-and-migrating-npm-global-packages-4no3 'Installing a New Node Version and Migrating npm Global Packages'
 [nvm-install2]: https://eriksamuelsson.com/update-nvm-installed-node-version-and-keep-globally-installed-packages/ 'Update nvm installed node version and keep globally installed packages'
 [brew]: https://brew.sh/ 'Homebrew'
+[prettier-linters]: https://prettier.io/docs/en/integrating-with-linters.html 'Integrating Prettier with Linters'
+[stylelint-prettier]: https://github.com/prettier/stylelint-prettier 'stylelint-prettier package'
+[eslint-plugin-prettier]: https://github.com/prettier/eslint-plugin-prettier 'eslint-plugin-prettier package'
 [wpcs&phpcs]: https://github.com/tommcfarlin/phpcs-wpcs-vscode 'WPCS and PHPCS'
 [multiple-git]: https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca 'How to manage multiple GitHub accounts on a single machine with SSH keys'
 [vscode-pro]: https://vscode.pro/ 'VS Code Power User - Learn Visual Studio Code'
