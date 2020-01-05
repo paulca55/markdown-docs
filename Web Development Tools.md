@@ -295,15 +295,17 @@ For example in your `.zshrc` file:
 export PATH=/Users/paul/.composer/vendor/bin:$PATH
 ```
 
-## Using ESLint and Stylelint with Prettier and VS Code
+## Using ESLint and stylelint with Prettier and VS Code
 
-Prettier will be used for **code formatting rules** and ESLint/Stylelint are used for **code quality rules**. Prettier rules can conflict with ESLint/Stylelint rules so you need to disable any ESLint/Stylelint rules that relate to code formatting, and only use Prettier rules set in the `.prettierrc.json` file. You can look at a previous project or follow the instructions in the links below on how to do this.
+Prettier will be used for **code formatting rules** and ESLint/stylelint are used for **code quality rules**. Prettier rules can conflict with ESLint/stylelint rules so you need to disable any ESLint/stylelint rules that relate to code formatting, and only use Prettier rules set in the `.prettierrc.json` file. You can look at a previous project or follow the instructions in the links below on how to do this.
 
 [Integrating Prettier with Linters][prettier-linters]
 
 [stylelint-prettier package][stylelint-prettier]
 
 [eslint-plugin-prettier package][eslint-plugin-prettier]
+
+[Why You Should Use ESLint, Prettier and EditorConfig Together][eslint-prettier-editorconfig-together]
 
 ### npm packages needed
 
@@ -964,6 +966,7 @@ When a password has been stored in keychain, `ssh-add -K -d key-file` both remov
 [prettier-linters]: https://prettier.io/docs/en/integrating-with-linters.html 'Integrating Prettier with Linters'
 [stylelint-prettier]: https://github.com/prettier/stylelint-prettier 'stylelint-prettier package'
 [eslint-plugin-prettier]: https://github.com/prettier/eslint-plugin-prettier 'eslint-plugin-prettier package'
+[eslint-prettier-editorconfig-together]: https://blog.theodo.com/2019/08/why-you-should-use-eslint-prettier-and-editorconfig-together/ 'Why You Should Use ESLint, Prettier and EditorConfig Together'
 [wpcs&phpcs]: https://github.com/tommcfarlin/phpcs-wpcs-vscode 'WPCS and PHPCS'
 [multiple-git]: https://medium.freecodecamp.org/manage-multiple-github-accounts-the-ssh-way-2dadc30ccaca 'How to manage multiple GitHub accounts on a single machine with SSH keys'
 [vscode-pro]: https://vscode.pro/ 'VS Code Power User - Learn Visual Studio Code'
