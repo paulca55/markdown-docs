@@ -320,6 +320,27 @@ Prettier will be used for **code formatting rules** and ESLint/stylelint are use
 
 ### Files needed
 
+`.editorconfig`
+
+_Note: Prettier will use certain settings from this file, such as `indent_size`, `indent_style`, `end_of_line` so they don't need setting inside of `.prettierrc.json` too._
+
+```
+# top-most EditorConfig file
+root = true
+
+# Tab indentation
+[*]
+charset = utf-8
+indent_style = spaces
+indent_size = 2
+trim_trailing_whitespace = true
+end_of_line = lf
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+```
+
 `.stylelintrc.json`
 
 ```json
@@ -342,7 +363,6 @@ Prettier will be used for **code formatting rules** and ESLint/stylelint are use
 {
   "singleQuote": true,
   "printWidth": 100,
-  "tabWidth": 2,
   "trailingComma": "es5"
 }
 ```
