@@ -193,8 +193,8 @@ var newSandwiches = [...sandwiches];
 
 Keep something in mind:
 
-1.  It’s less explicit than using something like `Array.slice()`or `Array.from()`. Both were made specifically to copy or create arrays, and the latter in particular tells you exactly what it’s doing in the name.
-2.  `Array.slice()` has exceptional backwards compatibility, and `Array.from()` is polyfillable.
+1. It’s less explicit than using something like `Array.slice()`or `Array.from()`. Both were made specifically to copy or create arrays, and the latter in particular tells you exactly what it’s doing in the name.
+2. `Array.slice()` has exceptional backwards compatibility, and `Array.from()` is polyfillable.
 
 ### Browser Compatibility
 

@@ -18,7 +18,12 @@
 - [Sass](#sass)
   - [Installing Sass](#installing-sass)
 - [Composer](#composer)
-- [PHP_CodeSniffer and WordPress Coding Standards (with VS Code)](#php_codesniffer-and-wordpress-coding-standards-with-vs-code)
+- [Using ESLint and stylelint with Prettier and VS Code](#using-eslint-and-stylelint-with-prettier-and-vs-code)
+  - [npm packages needed](#npm-packages-needed)
+  - [Files needed](#files-needed)
+  - [VS Code Extensions](#vs-code-extensions)
+  - [VS Code Settings](#vs-code-settings)
+- [PHP_CodeSniffer and WordPress Coding Standards with VS Code](#php_codesniffer-and-wordpress-coding-standards-with-vs-code)
   - [Global Install (system-wide)](#global-install-system-wide)
   - [Local Install (project-by-project basis)](#local-install-project-by-project-basis)
 - [VS Code](#vs-code)
@@ -28,14 +33,14 @@
   - [Icons](#icons)
 - [Debugging](#debugging)
   - [Debugging Modern JavaScript](#debugging-modern-javascript)
-  - [Debugging with Chrome &amp; React.js Framework](#debugging-with-chrome-amp-reactjs-framework)
+  - [Debugging with Chrome & React.js Framework](#debugging-with-chrome--reactjs-framework)
   - [Node.js](#nodejs)
   - [VS Code WordPress Debugging Setup using Xdebug and Local by Flywheel](#vs-code-wordpress-debugging-setup-using-xdebug-and-local-by-flywheel)
 - [SSH](#ssh)
   - [Generating a new SSH key](#generating-a-new-ssh-key)
   - [Adding your SSH key to the ssh-agent](#adding-your-ssh-key-to-the-ssh-agent)
   - [SSH config file](#ssh-config-file)
-  - [Some ssh-add tricks](#some-ssh-add-tricks)
+  - [Some `ssh-add` tricks](#some-ssh-add-tricks)
 
 ## Command-Line Tools
 
@@ -532,6 +537,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Debugger for Chrome
 - ECMAScript Quotes Transformer
 - EditorConfig for VS Code
+- ES7 React/Redux/GraphQL/React-Native snippets
 - ESLint _- the npm package `eslint` is required to be installed in the workspace (recommended) or globally. The global `eslint` is useful for commands such as `eslint --init` to create an `.eslintrc.json` config file. See the extension instructions._
 - expand-region
 - Express
