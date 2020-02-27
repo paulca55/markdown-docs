@@ -16,6 +16,12 @@
   - [The fancy new ES6 way](#the-fancy-new-es6-way)
   - [Browser Compatibility](#browser-compatibility)
 - [Page lifecycle: DOMContentLoaded, load, beforeunload, unload](#page-lifecycle-domcontentloaded-load-beforeunload-unload)
+- [Correct type-checking in JavaScript](#correct-type-checking-in-javascript)
+  - [Type-checking numbers](#type-checking-numbers)
+  - [Type-checking strings](#type-checking-strings)
+  - [Type-checking booleans](#type-checking-booleans)
+  - [Type-checking objects](#type-checking-objects)
+  - [Type-checking arrays](#type-checking-arrays)
 
 ## The DOM
 
@@ -58,7 +64,10 @@ _Note: See the **Selecting Multiple DOM Elements/Nodes** section about how a `No
 
 ### Objects
 
-- `for...in` statement
+- `for...in` statement - _this enumerates properties in the protoype chain too._
+- `Object.keys` method
+- `Object.entries` method
+- `Object.values` method
 
 ### NodeLists
 
@@ -151,7 +160,7 @@ var sandwichesCopy = sandwiches.slice();
 
 #### Array.from()
 
-If you only need to copy an array, you can use the `Array.from()` method we talked about yesterday.
+If you only need to copy an array, you can use the `Array.from()` method.
 
 ```JavaScript
 var sandwiches = ['turkey', 'tuna', 'chicken salad', 'italian', 'blt', 'grilled cheese'];
@@ -182,7 +191,7 @@ var sandwiches = ['turkey', 'tuna', 'chicken salad', 'italian', 'blt', 'grilled 
 var newSandwiches = [...sandwiches];
 ```
 
-It works, but I don’t like it for two reasons:
+Keep something in mind:
 
 1.  It’s less explicit than using something like `Array.slice()`or `Array.from()`. Both were made specifically to copy or create arrays, and the latter in particular tells you exactly what it’s doing in the name.
 2.  `Array.slice()` has exceptional backwards compatibility, and `Array.from()` is polyfillable.
@@ -200,3 +209,299 @@ It works, but I don’t like it for two reasons:
 You can find some useful information about the lifecycle of an HTML page at [JavaScript.info][onload].
 
 [onload]: https://javascript.info/onload-ondomcontentloaded 'Page lifecycle: DOMContentLoaded, load, beforeunload, unload'
+
+## Correct type-checking in JavaScript
+
+### Type-checking numbers
+
+#### Method 1
+
+It is safe to use the `typeof` operator for numbers.
+
+```js
+var num = 99.66;
+
+console.log(typeof num); // number
+
+if (typeof num === 'number') {
+  console.log("Yes it's a number!"); // Yes it's a number!
+}
+```
+
+#### Method 2
+
+You can also use the `Object.prototype` method but this is overkill for numbers.
+
+```js
+var num = 99.66;
+
+console.log(Object.prototype.toString.call(num)); // [object Number]
+
+if (Object.prototype.toString.call(num) === '[object Number]') {
+  console.log("Yes it's a number!"); // Yes it's a number!
+}
+```
+
+By adding the `slice` method this can be simplified.
+
+```js
+var num = 99.66;
+
+console.log(
+  Object.prototype.toString
+    .call(num)
+    .slice(8, -1)
+    .toLowerCase()
+); // number
+
+if (
+  Object.prototype.toString
+    .call(num)
+    .slice(8, -1)
+    .toLowerCase() === 'number'
+) {
+  console.log("Yes it's a number!"); // Yes it's a number!
+}
+```
+
+### Type-checking strings
+
+#### Method 1
+
+It is safe to use the `typeof` operator for strings.
+
+```js
+var str = 'dog';
+
+console.log(typeof str); // string
+
+if (typeof str === 'string') {
+  console.log("Yes it's a string!"); // Yes it's a string!
+}
+```
+
+#### Method 2
+
+You can also use the `Object.prototype` method but this is overkill for strings.
+
+```js
+var str = 'dog';
+
+console.log(Object.prototype.toString.call(str)); // [object String]
+
+if (Object.prototype.toString.call(str) === '[object String]') {
+  console.log("Yes it's a string!"); // Yes it's a string!
+}
+```
+
+By adding the `slice` method this can be simplified.
+
+```js
+var str = 'dog';
+
+console.log(
+  Object.prototype.toString
+    .call(str)
+    .slice(8, -1)
+    .toLowerCase()
+); // string
+
+if (
+  Object.prototype.toString
+    .call(str)
+    .slice(8, -1)
+    .toLowerCase() === 'string'
+) {
+  console.log("Yes it's a string!"); // Yes it's a string!
+}
+```
+
+### Type-checking booleans
+
+#### Method 1
+
+It is safe to use the `typeof` operator for booleans.
+
+```js
+var bool = true;
+
+console.log(typeof bool); // boolean
+
+if (typeof bool === 'boolean') {
+  console.log("Yes it's a boolean!"); // Yes it's a boolean!
+}
+```
+
+#### Method 2
+
+You can also use the `Object.prototype` method but this is overkill for booleans.
+
+```js
+var bool = true;
+
+console.log(Object.prototype.toString.call(bool)); // [object Boolean]
+
+if (Object.prototype.toString.call(bool) === '[object Boolean]') {
+  console.log("Yes it's a boolean!"); // Yes it's a boolean!
+}
+```
+
+By adding the `slice` method this can be simplified.
+
+```js
+var bool = true;
+
+console.log(
+  Object.prototype.toString
+    .call(bool)
+    .slice(8, -1)
+    .toLowerCase()
+); // boolean
+
+if (
+  Object.prototype.toString
+    .call(bool)
+    .slice(8, -1)
+    .toLowerCase() === 'boolean'
+) {
+  console.log("Yes it's a boolean!"); // Yes it's a boolean!
+}
+```
+
+### Type-checking objects
+
+#### Method 1
+
+It is **not safe** to use the `typeof` operator for objects. This is because `typeof` can report back a type of `object` when this isn't always the case.
+
+```js
+var obj = {
+  type: 'fizzy',
+  flavour: 'cola',
+  price: 0.8,
+};
+
+console.log(typeof obj); // object
+console.log(typeof []); // object
+console.log(typeof null); // object
+```
+
+#### Method 2
+
+A bulletproof way you can check the type is `object` is by using the `Object.prototype` method.
+
+```js
+var obj = {
+  type: 'fizzy',
+  flavour: 'cola',
+  price: 0.8,
+};
+
+console.log(Object.prototype.toString.call(obj)); // [object Object]
+
+if (Object.prototype.toString.call(obj) === '[object Object]') {
+  console.log("Yes it's a object!"); // Yes it's a object!
+}
+```
+
+By adding the `slice` method this can be simplified.
+
+```js
+var obj = {
+  type: 'fizzy',
+  flavour: 'cola',
+  price: 0.8,
+};
+
+console.log(
+  Object.prototype.toString
+    .call(obj)
+    .slice(8, -1)
+    .toLowerCase()
+); // object
+
+if (
+  Object.prototype.toString
+    .call(obj)
+    .slice(8, -1)
+    .toLowerCase() === 'object'
+) {
+  console.log("Yes it's a object!"); // Yes it's a object!
+}
+```
+
+### Type-checking arrays
+
+#### Method 1
+
+It is **not safe** to use the `typeof` operator for arrays. This is because `typeof` will report back a type of `object` for arrays.
+
+```js
+var arr = [1, 2, 3, 4];
+
+console.log(typeof arr); // object
+```
+
+#### Method 2
+
+It is safe to use the `instanceOf` operator for arrays, and is a quick way to check, but still isn't the best way to type check an array as we now have `Array.isArray()`, see other methods below.
+
+```js
+var arr = [1, 2, 3, 4];
+
+console.log(arr instanceof Array); // true
+
+if (arr instanceof Array === true) {
+  console.log("Yes it's a array!"); // Yes it's a array!
+}
+```
+
+#### Method 3
+
+There is a new method (check for browser compatibility) called `Array.isArray()`, which is a really good method for type checking arrays.
+
+```js
+var arr = [1, 2, 3, 4];
+
+console.log(Array.isArray(arr)); // true
+
+if (Array.isArray(arr) === true) {
+  console.log("Yes it's a array!"); // Yes it's a array!
+}
+```
+
+#### Method 4
+
+A bulletproof way you can check the type is `object` is by using the `Object.prototype` method.
+
+```js
+var arr = [1, 2, 3, 4];
+
+console.log(Object.prototype.toString.call(arr)); // [object Array]
+
+if (Object.prototype.toString.call(arr) === '[object Array]') {
+  console.log("Yes it's a array!"); // Yes it's a array!
+}
+```
+
+By adding the `slice` method this can be simplified.
+
+```js
+var arr = [1, 2, 3, 4];
+
+console.log(
+  Object.prototype.toString
+    .call(arr)
+    .slice(8, -1)
+    .toLowerCase()
+); // array
+
+if (
+  Object.prototype.toString
+    .call(arr)
+    .slice(8, -1)
+    .toLowerCase() === 'array'
+) {
+  console.log("Yes it's a array!"); // Yes it's a array!
+}
+```
