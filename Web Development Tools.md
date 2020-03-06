@@ -523,6 +523,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Advanced New File
 - Apache Conf
 - Apache Conf Snippets
+- Apollo GraphQL
 - Auto Close Tag
 - Auto Rename Tag
 - Better Align
