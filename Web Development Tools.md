@@ -588,6 +588,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - Reactjs code snippets
 - Save and Run
 - SCSS IntelliSense
+- React Apollo Snippets
 - Search WordPress Docs
 - Settings Sync
 - Shopify Liquid Template Snippets
