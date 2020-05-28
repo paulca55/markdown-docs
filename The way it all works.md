@@ -50,11 +50,11 @@
 
   - **Featured Images for Page Headers:** If a featured image has already been set as a page header before Imagify has resized it, then the image will behave the same as above.
 
-**NOTE:** This only applies to images that will be used through the Media Library, images in the theme folder don’t get resized.
+> Note: This only applies to images that will be used through the Media Library, images in the theme folder don’t get resized.
 
-**NOTE:** The Bulk Optimisation process only optimizes images that haven't already been optimized with Imagify. So if you change the **Max Width** you will need to restore all images back to their original state (assuming **Backup original images** is enabled) and then re-run the bulk optimisation.
+> Note: The Bulk Optimisation process only optimizes images that haven't already been optimized with Imagify. So if you change the **Max Width** you will need to restore all images back to their original state (assuming **Backup original images** is enabled) and then re-run the bulk optimisation.
 
-**NOTE:** When **Backup original images** is enabled, only images that have been processed by Imagify will appear in the backup folder. So if Imagify reports that no further compression is needed then the image is untouched so does not need a backup.
+> Note: When **Backup original images** is enabled, only images that have been processed by Imagify will appear in the backup folder. So if Imagify reports that no further compression is needed then the image is untouched so does not need a backup.
 
 ## FontAwesome 5
 
