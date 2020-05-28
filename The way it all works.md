@@ -56,10 +56,6 @@
 
 > Note: When **Backup original images** is enabled, only images that have been processed by Imagify will appear in the backup folder. So if Imagify reports that no further compression is needed then the image is untouched so does not need a backup.
 
-## FontAwesome 5
-
-> Note: If you need to add icons using pseudo-elements you must use **Web Fonts with CSS**. Pseudo-elements are not supported when using **SVG with JavaScript**.
-
 ### Basic Use
 
 ```html
