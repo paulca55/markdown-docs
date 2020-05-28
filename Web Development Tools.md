@@ -578,7 +578,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - phpcs
 - Polacode
 - PostCSS Sorting
-- Prettier\_
+- Prettier
 - Project Manager
 - pug
 - Pug to HTML
