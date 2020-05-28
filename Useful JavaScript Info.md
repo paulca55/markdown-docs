@@ -52,7 +52,7 @@ document.body.childNodes;
 
 ## Looping over `Array`, `Object`, `NodeList` and `HTMLCollection`
 
-_Note: See the **Selecting Multiple DOM Elements/Nodes** section about how a `NodeList` and a `HTMLCollection` can be a **live** collection or a **static** collection._
+> Note: See the **Selecting Multiple DOM Elements/Nodes** section about how a `NodeList` and a `HTMLCollection` can be a **live** collection or a **static** collection.
 
 ### Arrays
 
@@ -77,7 +77,7 @@ _Note: See the **Selecting Multiple DOM Elements/Nodes** section about how a `No
 - `forEach()` method - _this is not widely supported on a `NodeList`._
 - `for...of` statement - _this is an ES6 addition._
 
-_Note: You can convert the `NodeList` to an Array and be able to use the methods/properties on the `Array.prototype`. See the section on array conversions._
+> Note: You can convert the `NodeList` to an Array and be able to use the methods/properties on the `Array.prototype`. See the section on array conversions.
 
 ### HTMLCollections
 
@@ -85,7 +85,7 @@ _Note: You can convert the `NodeList` to an Array and be able to use the methods
 - `while` loop
 - `for...of` statement - _this is an ES6 addition._
 
-_Note: You can convert the `HTMLCollection` to an Array and be able to use the methods/properties on the `Array.prototype`. See the section on array conversions._
+> Note: You can convert the `HTMLCollection` to an Array and be able to use the methods/properties on the `Array.prototype`. See the section on array conversions.
 
 ## Converting a `NodeList` or an `HTMLCollection` to an `Array`
 
@@ -247,19 +247,9 @@ By adding the `slice` method this can be simplified.
 ```js
 var num = 99.66;
 
-console.log(
-  Object.prototype.toString
-    .call(num)
-    .slice(8, -1)
-    .toLowerCase()
-); // number
+console.log(Object.prototype.toString.call(num).slice(8, -1).toLowerCase()); // number
 
-if (
-  Object.prototype.toString
-    .call(num)
-    .slice(8, -1)
-    .toLowerCase() === 'number'
-) {
+if (Object.prototype.toString.call(num).slice(8, -1).toLowerCase() === 'number') {
   console.log("Yes it's a number!"); // Yes it's a number!
 }
 ```
@@ -299,19 +289,9 @@ By adding the `slice` method this can be simplified.
 ```js
 var str = 'dog';
 
-console.log(
-  Object.prototype.toString
-    .call(str)
-    .slice(8, -1)
-    .toLowerCase()
-); // string
+console.log(Object.prototype.toString.call(str).slice(8, -1).toLowerCase()); // string
 
-if (
-  Object.prototype.toString
-    .call(str)
-    .slice(8, -1)
-    .toLowerCase() === 'string'
-) {
+if (Object.prototype.toString.call(str).slice(8, -1).toLowerCase() === 'string') {
   console.log("Yes it's a string!"); // Yes it's a string!
 }
 ```
@@ -351,19 +331,9 @@ By adding the `slice` method this can be simplified.
 ```js
 var bool = true;
 
-console.log(
-  Object.prototype.toString
-    .call(bool)
-    .slice(8, -1)
-    .toLowerCase()
-); // boolean
+console.log(Object.prototype.toString.call(bool).slice(8, -1).toLowerCase()); // boolean
 
-if (
-  Object.prototype.toString
-    .call(bool)
-    .slice(8, -1)
-    .toLowerCase() === 'boolean'
-) {
+if (Object.prototype.toString.call(bool).slice(8, -1).toLowerCase() === 'boolean') {
   console.log("Yes it's a boolean!"); // Yes it's a boolean!
 }
 ```
@@ -413,19 +383,9 @@ var obj = {
   price: 0.8,
 };
 
-console.log(
-  Object.prototype.toString
-    .call(obj)
-    .slice(8, -1)
-    .toLowerCase()
-); // object
+console.log(Object.prototype.toString.call(obj).slice(8, -1).toLowerCase()); // object
 
-if (
-  Object.prototype.toString
-    .call(obj)
-    .slice(8, -1)
-    .toLowerCase() === 'object'
-) {
+if (Object.prototype.toString.call(obj).slice(8, -1).toLowerCase() === 'object') {
   console.log("Yes it's a object!"); // Yes it's a object!
 }
 ```
@@ -489,19 +449,9 @@ By adding the `slice` method this can be simplified.
 ```js
 var arr = [1, 2, 3, 4];
 
-console.log(
-  Object.prototype.toString
-    .call(arr)
-    .slice(8, -1)
-    .toLowerCase()
-); // array
+console.log(Object.prototype.toString.call(arr).slice(8, -1).toLowerCase()); // array
 
-if (
-  Object.prototype.toString
-    .call(arr)
-    .slice(8, -1)
-    .toLowerCase() === 'array'
-) {
+if (Object.prototype.toString.call(arr).slice(8, -1).toLowerCase() === 'array') {
   console.log("Yes it's a array!"); // Yes it's a array!
 }
 ```

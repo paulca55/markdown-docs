@@ -51,16 +51,14 @@
 The file which lists all of the paths in your system \$PATH can be found at
 `/private/etc/paths`.
 
-_Note: Not all paths will be in this file as they can also be added via the
-`.zshrc` or `.bashrc` config files. You can see the full list of paths by typing
-`echo $PATH` into your terminal._
+> Note: Not all paths will be in this file as they can also be added via the `.zshrc` or `.bashrc` config files. You can see the full list of paths by typing `echo $PATH` into your terminal.
 
 #### Shell Path
 
 The file which lists all the paths available for a terminal shell can be found
 at `/private/etc/shells`.
 
-_Note: You can see the path to the currently active shell by typing `echo $SHELL` into your terminal._
+> Note: You can see the path to the currently active shell by typing `echo $SHELL` into your terminal.
 
 ### iTerm
 
@@ -72,7 +70,7 @@ latest version of [iTerm][iterm].
 Hyper is a replacement for macOS's default Terminal. Download and install the
 latest version of [Hyper][hyper].
 
-_Note: The Hyper config file is stored a- `/Users/paul/.hyper.js`._
+> Note: The Hyper config file is stored a- `/Users/paul/.hyper.js`.
 
 #### Hyper Plugins
 
@@ -89,7 +87,7 @@ plugins: [
 ],
 ```
 
-_Note: Hyper plugins are stored a- `/Users/paul/.hyper_plugins/node_modules`._
+> Note: Hyper plugins are stored a- `/Users/paul/.hyper_plugins/node_modules`.
 
 #### Recommended Hyper Plugins
 
@@ -119,9 +117,9 @@ the [Oh-MY-ZSH GitHub][zsh] page.
 Oh-My-Zsh is a framework for managing your ZSH (Z shell) configuration. Download
 and install the latest version of [Oh-My-ZSH][oh-my-zsh].
 
-_Note: Oh-My-ZSH can be updated by running - `upgrade_oh_my_zsh`._
+> Note: Oh-My-ZSH can be updated by running - `upgrade_oh_my_zsh`.
 
-_Note: The Oh-My-ZSH config file is stored a- `/Users/paul/.zshrc`._
+> Note: The Oh-My-ZSH config file is stored a- `/Users/paul/.zshrc`.
 
 #### Oh-My-ZSH Plugins
 
@@ -136,9 +134,9 @@ plugins=(git extract osx npm z)
 
 To add a **custom plugin** you'll need to either use homebrew or manually copy the plugin files to the custom plugin path (see below).
 
-_Note: ZSH bundled plugins are stored at - `/Users/paul/.oh-my-zsh/plugins`._
+> Note: ZSH bundled plugins are stored at - `/Users/paul/.oh-my-zsh/plugins`.
 
-_Note: ZSH custom plugins are stored at - `/Users/paul/.oh-my-zsh/custom/plugins`._
+> Note: ZSH custom plugins are stored at - `/Users/paul/.oh-my-zsh/custom/plugins`.
 
 Once you’ve added a plugin, you will need to either run `source ~/.zshrc` or open
 a new terminal tab.
@@ -159,7 +157,7 @@ a new terminal tab.
 - zsh-nvm
 - zsh-syntax-highlighting - _(can be installed via Homebrew. Remember to add the path to this in the `.zshrc` file.)_
 
-_Note: The path to Homebrew installed custom plugins can be found at `/usr/local/share/<package-name>/<package-name>.zsh`._
+> Note: The path to Homebrew installed custom plugins can be found at `/usr/local/share/<package-name>/<package-name>.zsh`.
 
 ### z
 
@@ -192,9 +190,9 @@ The best way to install Homebrew is from [brew.sh][brew].
 - tree
 - youtube-dl
 
-_Note: see the ZSH section that may have plugins that can be installed via Homebrew._
+> Note: see the ZSH section that may have plugins that can be installed via Homebrew.
 
-_Note: Formulas are stored at `/usr/local/Cellar`._
+> Note: Formulas are stored at `/usr/local/Cellar`.
 
 ### Recommended Casks
 
@@ -202,9 +200,9 @@ _Note: Formulas are stored at `/usr/local/Cellar`._
 - qlImageSize ([manual install][cask-qlimagesize])
 - [Quick Look plugins][cask-quick-look]
 
-_Note: Casks are stored at `/usr/local/Caskroom`._
+> Note: Casks are stored at `/usr/local/Caskroom`.
 
-_Note: You may need to add the path to your system PATH in the `.zshrc` file (e.g. `/usr/local/opt/php70/bin` in order for it to be used)._
+> Note: You may need to add the path to your system PATH in the `.zshrc` file (e.g. `/usr/local/opt/php70/bin` in order for it to be used).
 
 ## Node.js and npm
 
@@ -214,11 +212,11 @@ The best way to install and manage Node.js is using **Node Version Manager (nvm)
 
 **Test command:** `node -v`
 
-_Note: The path for `nvm` installations of Node is `/Users/paul/.nvm/versions/node`._
+> Note: The path for `nvm` installations of Node is `/Users/paul/.nvm/versions/node`.
 
-_Note: nvm can be upgraded using the command `nvm upgrade`._
+> Note: nvm can be upgraded using the command `nvm upgrade`.
 
-_Note: You can set a Node version default using the command `nvm alias default 12.3.1` so each time you open a new shell window it will default to your specified version._
+> Note: You can set a Node version default using the command `nvm alias default 12.3.1` so each time you open a new shell window it will default to your specified version.
 
 #### Useful Links
 
@@ -238,7 +236,7 @@ npm install npm -g
 
 **Test command:** `npm -v`
 
-_Note: You can use the command `npm root -g` to show where global node_modules folder is._
+> Note: You can use the command `npm root -g` to show where global node_modules folder is.
 
 #### Possible Issues
 
@@ -261,13 +259,13 @@ Install the following npm packages globally:
 
 **Example:** `npm install <package> -g`
 
-_Note: Assuming you are using nvm to manage Node versions, the global `npm` packages are stored at- `/Users/paul/.nvm/versions/node/<node_version>/lib/node_modules`._
+> Note: Assuming you are using nvm to manage Node versions, the global `npm` packages are stored at- `/Users/paul/.nvm/versions/node/<node_version>/lib/node_modules`.
 
-_Note: When you install global npm packages they will be installed for the current version of Node you have active. To reinstall packages you're using from another version of Node you can run the following command - `nvm reinstall-packages <version>`_
+> Note: When you install global npm packages they will be installed for the current version of Node you have active. To reinstall packages you're using from another version of Node you can run the following command - `nvm reinstall-packages <version>`
 
 ## Sass
 
-_Note: Sass requires Ruby to be installed._
+> Note: Sass requires Ruby to be installed.
 
 ### Installing Sass
 
@@ -283,7 +281,7 @@ gem install sass
 
 Install Composer globally using Homebrew.
 
-_Note: The Homebrew Formula will be stored a- `/usr/local/Cellar/composer`._
+> Note: The Homebrew Formula will be stored a- `/usr/local/Cellar/composer`.
 
 Make sure you have the composer bin dir in your PATH as this is where the
 _global_ composer packages will be installed and referenced from. The default
@@ -327,7 +325,7 @@ Prettier will be used for **code formatting rules** and ESLint/stylelint are use
 
 `.editorconfig`
 
-_Note: Prettier will use certain settings from this file, such as `indent_size`, `indent_style`, `end_of_line` so they don't need setting inside of `.prettierrc.json` too._
+> Note: Prettier will use certain settings from this file, such as `indent_size`, `indent_style`, `end_of_line` so they don't need setting inside of `.prettierrc.json` too.
 
 ```
 # top-most EditorConfig file
@@ -388,8 +386,8 @@ We need to tell VS Code to run Prettier and format the document when the documen
 
 ## PHP_CodeSniffer and WordPress Coding Standards with VS Code
 
-_Note: The following steps assume you have PHP installed and globally accessible
-on your system._
+> Note: The following steps assume you have PHP installed and globally accessible
+> on your system.
 
 ### Global Install (system-wide)
 
@@ -418,8 +416,8 @@ Then tell the global PHPCS about WPCS:
 phpcs --config-set installed_paths ~/Dropbox/Misc/Front-end-dev/Coding_Standards/wpcs
 ```
 
-_Note: This enters the path to the WPCS folder into the
-`/usr/local/Cellar/php-code-sniffer/x.x.x/CodeSniffer.conf` file._
+> Note: This enters the path to the WPCS folder into the
+> `/usr/local/Cellar/php-code-sniffer/x.x.x/CodeSniffer.conf` file.
 
 Finally, run `phpcs -i` and you should see the WordPress rules appear in the
 available set. You should see something like the following:
@@ -430,9 +428,9 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz, Zen
 
 #### VS Code User Settings
 
-_Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work._
+> Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work.
 
-_Note: The **global** `phpcs` and `phpcbf` will be used._
+> Note: The **global** `phpcs` and `phpcbf` will be used.
 
 Finally, we need to let VS Code what we're going to be using to sniff out the
 code in our project and what rules to use. Add the following to the
@@ -494,9 +492,9 @@ The installed coding standards are MySource, PEAR, PHPCS, PSR1, PSR2, Squiz, Zen
 
 #### VS Code User Settings
 
-_Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work._
+> Note: You will need to install the `phpcs` and `phpcbf` extensions for this to work.
 
-_Note: The **local** `phpcs` and `phpcbf` will be used._
+> Note: The **local** `phpcs` and `phpcbf` will be used.
 
 Finally, we need to let VS Code what we're going to be using to sniff out the
 code in our project and what rules to use. Add the following to the
@@ -625,7 +623,7 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 
 ### Debugging Modern JavaScript
 
-_Note: These notes are taken from the [VS Code Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais]._
+> Note: These notes are taken from the [VS Code Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais].
 
 Debug modern JavaScript with this VS Code and Babel recipe.
 
@@ -730,7 +728,7 @@ See the [Node.js debugging in VS Code with Nodemon][nodejs-vscode-debugging] Git
 
 ### VS Code WordPress Debugging Setup using Xdebug and Local by Flywheel
 
-_Note: These notes are taken from the [VS Code Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais]._
+> Note: These notes are taken from the [VS Code Power User][vscode-pro] course by [Ahmad Awais][ahmad-awais].
 
 #### TL;DR
 
@@ -746,7 +744,7 @@ Here're are some easy steps to follow to make sure you can debug WordPress in Lo
 
 ##### Custom WordPress Install
 
-_Note: Make sure your `Local by Flywheel` WordPress install is using a custom local environment._
+> Note: Make sure your `Local by Flywheel` WordPress install is using a custom local environment.
 
 - Flywheel Local has Xdebug installed by default if you choose “Custom” instead of “Preferred” when setting up a new local environment.
 - If you are not running a custom local environment you can just export your site, import it back in and this time choose “Custom”. It's possible to change the local environment from within the settings but this sometimes causes problems.
@@ -763,7 +761,7 @@ Now that we are using a custom local environment we need to configure Xdebug.
 xdebug.remote_autostart = 1
 ```
 
-_Note: While only the above option is required but some 3rd party extension/plugin for local can sometimes change things so make sure in the `[Xdebug]` section all the following settings are set to `1` (only if your debugger is not working)._
+> Note: While only the above option is required but some 3rd party extension/plugin for local can sometimes change things so make sure in the `[Xdebug]` section all the following settings are set to `1` (only if your debugger is not working).
 
 ```ini
 xdebug.scream = 1
@@ -835,7 +833,7 @@ Now go ahead and debug your WordPress app/plugin/theme.
 
 You can also install a local plugin called [local-addon-xdebug-control][local-addon-xdebug-control] for UI based control of Xdebug settings in your `Local by Flywheel` software.
 
-_Note: Make sure everything is set to yes for a sane debugging experience._
+> Note: Make sure everything is set to yes for a sane debugging experience.
 
 ![Add-on](https://on.ahmda.ws/9155be150de8/c)
 
@@ -847,11 +845,11 @@ _Note: Make sure everything is set to yes for a sane debugging experience._
 
    `ssh-keygen -t rsa -b 4096`
 
-_Note: The `-t rsa` forces the key to be in the RSA format._
+> Note: The `-t rsa` forces the key to be in the RSA format.
 
-_Note: The `-b 4096` forces the key to be 4096 bits._
+> Note: The `-b 4096` forces the key to be 4096 bits.
 
-_Note: You can add `-C "your comment here"` to add a comment to your generated key. For example, this could be an email address (e.g. `-C "yourname@yourdomain.com"`)._
+> Note: You can add `-C "your comment here"` to add a comment to your generated key. For example, this could be an email address (e.g. `-C "yourname@yourdomain.com"`).
 
 1. When you're prompted to "Enter a file in which to save the key," press `Enter`. This accepts the default file location (i.e. `/Users/you/.ssh/`).
 
@@ -859,7 +857,7 @@ _Note: You can add `-C "your comment here"` to add a comment to your generated k
 
    This will create a private key called `id_rsa` and a public key called `id_rsa.pub`.
 
-   _Note: If you want to give the key a different name add the `-f` option (e.g. `ssh-keygen -t rsa -b 4096 -f github_rsa`). Note this will create the the keys `github_rsa` and `github_rsa.pub` in the current working directory of the terminal._
+   > Note: If you want to give the key a different name add the `-f` option (e.g. `ssh-keygen -t rsa -b 4096 -f github_rsa`). Note this will create the the keys `github_rsa` and `github_rsa.pub` in the current working directory of the terminal.
 
 1. At the prompt, type a secure passphrase.
 
@@ -885,17 +883,17 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
 
    `ssh-add -K ~/.ssh/id_rsa`
 
-   _Note: The `-K` option is Apple's standard version of `ssh-add`, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent._
+   > Note: The `-K` option is Apple's standard version of `ssh-add`, which stores the passphrase in your keychain for you when you add an ssh key to the ssh-agent.
 
-   _Note: If you don't want to add the passphrase into the keychain you can use the standard `ssh-add ~/.ssh/id_rsa` command._
+   > Note: If you don't want to add the passphrase into the keychain you can use the standard `ssh-add ~/.ssh/id_rsa` command.
 
-   _Note: If the ssh-agent isn't running you can start it up by running the command `eval "$(ssh-agent -s)"`._
+   > Note: If the ssh-agent isn't running you can start it up by running the command `eval "$(ssh-agent -s)"`.
 
 ### SSH config file
 
 The SSH config file can help make life easier by setting options which help to automatically load keys into the ssh-agent, setting aliases to shorten what we have to type and automatically using passphrases stored in the keychain.
 
-_Note: The config file can be edited or should be created at `~/.ssh/config`._
+> Note: The config file can be edited or should be created at `~/.ssh/config`.
 
 #### Config file example
 
@@ -928,7 +926,7 @@ Host *
   AddKeysToAgent yes
 ```
 
-_Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git] if you need to push changes from multiple accounts. If you only need to push changes to a git repo **as yourself**, not the owner of the repo, you just need to be added as a collaborator in the GitHub dashboard. This will then use your own SSH key to push the changes, you don't need to mess around with adding a new SSH key ._
+> Note: Learn more about how to connect to [multiple GitHub accounts on a single machine][multiple-git] if you need to push changes from multiple accounts. If you only need to push changes to a git repo **as yourself**, not the owner of the repo, you just need to be added as a collaborator in the GitHub dashboard. This will then use your own SSH key to push the changes, you don't need to mess around with adding a new SSH key.
 
 ### Some `ssh-add` tricks
 

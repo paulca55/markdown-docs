@@ -32,11 +32,11 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 ## Using JSON data from a WordPress post
 
-_Note: This snippet is using jQuery._
+> Note: This snippet is using jQuery.
 
 ```js
-$(function() {
-  $.getJSON('http://www.littlecomets.com/wp-json/wp/v2/posts/', function(json) {
+$(function () {
+  $.getJSON('http://www.littlecomets.com/wp-json/wp/v2/posts/', function (json) {
     $('.json01').html('Title: ' + json[0].title.rendered);
     $('.json02').html('Date: ' + json[0].date_gmt);
     $('.json03').html('URL: ' + json[0].link);

@@ -58,7 +58,7 @@
 
 ## FontAwesome 5
 
-_Note: If you need to add icons using pseudo-elements you must use **Web Fonts with CSS**. Pseudo-elements are not supported when using **SVG with JavaScript**._
+> Note: If you need to add icons using pseudo-elements you must use **Web Fonts with CSS**. Pseudo-elements are not supported when using **SVG with JavaScript**.
 
 ### Basic Use
 

@@ -34,9 +34,9 @@ This can be caused by the `wp-content/object-cache.php` file (if present). Try d
 
 Maybe also try deleting/renaming other _cache_ folders and files to see if they are causing the issue.
 
-_Note: You will probably have to run all the Cron jobs manually via WP-CLI to clear the queue with the `wp cron event run --all` command first, and then check to see if scheduled jobs are working as they should._
+> Note: You will probably have to run all the Cron jobs manually via WP-CLI to clear the queue with the `wp cron event run --all` command first, and then check to see if scheduled jobs are working as they should.
 
-_Note: The `object-cache.php` file can be created by plugins such as SiteGround's SG Optimizer when you enable memcached on the server and in the plugin settings._
+> Note: The `object-cache.php` file can be created by plugins such as SiteGround's SG Optimizer when you enable memcached on the server and in the plugin settings.
 
 ## WordPress redirects
 
