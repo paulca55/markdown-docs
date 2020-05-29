@@ -541,7 +541,6 @@ This will enable PHPCS and PHPCBF and will also tell them to use the standard Wo
 - expand-region
 - Express
 - File Utils
-- Git Project Manager
 - Gitconfig Syntax
 - GitHub Pull Requests
 - gitignore
