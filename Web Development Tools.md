@@ -323,7 +323,7 @@ Prettier will be used for **code formatting rules** and ESLint/stylelint are use
 
 ### Files needed
 
-`.editorconfig`
+#### `.editorconfig`
 
 > Note: Prettier will use certain settings from this file, such as `indent_size`, `indent_style`, `end_of_line` so they don't need setting inside of `.prettierrc.json` too.
 
@@ -344,7 +344,7 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-`.stylelintrc.json`
+#### `.stylelintrc.json`
 
 ```json
 {
@@ -352,7 +352,7 @@ trim_trailing_whitespace = false
 }
 ```
 
-`.eslintrc.json`
+#### `.eslintrc.json`
 
 ```json
 {
@@ -360,7 +360,7 @@ trim_trailing_whitespace = false
 }
 ```
 
-`.prettierrc.json`
+#### `.prettierrc.json`
 
 ```json
 {
